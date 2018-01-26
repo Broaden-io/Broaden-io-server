@@ -16,6 +16,11 @@ app.use(cookieParser());
 require('./controllers/auth-controller.js')(app);
 require('./controllers/rubric-controller.js')(app);
 
+app.get('/', function(req, res) {
+  console.log('GET index');
+  res.send('index');
+});
+
 var PORT = process.env.PORT || 3000;
 
 app.listen(PORT, function(req, res) {
