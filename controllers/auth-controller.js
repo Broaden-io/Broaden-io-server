@@ -1,3 +1,5 @@
+var bodyParser = require('body-parser');
+var jwt = require('jsonwebtoken');
 
 module.exports = function(app) {
   app.get('/login', function(req, res) {
@@ -20,9 +22,8 @@ module.exports = function(app) {
     res.redirect('/');
   });
 
-  app.changeEvent('/signup', function(req, res, next) {
+  app.post('/signup', function(req, res, next) {
     console.log('GET signup');
     res.redirect('/');
   });
-}
 }
