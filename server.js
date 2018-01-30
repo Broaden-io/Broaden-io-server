@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+var acceptOverride = require('connect-acceptoverride');
 
 //**** SEQUELIZE ****//
 const Sequelize = require('sequelize');
