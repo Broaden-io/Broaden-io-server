@@ -42,7 +42,7 @@ require('./controllers/rubric-controller.js')(app);
 
 app.get('/', function(req, res) {
   console.log('GET index');
-  res.send('index');
+  res.send('Rubrics App backend up and running!');
 });
 
 var PORT = process.env.PORT || 8000;
