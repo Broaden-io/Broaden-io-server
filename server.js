@@ -36,6 +36,21 @@ app.use(function (req, res, next) {
   next();
 });
 
+// Auth Middleware
+var checkAuth = function (req, res, next) {
+  console.log("Checking authentication");
+
+  if (typeof req.cookies.RubricsApp === 'undefined' || req.cookies.RubricsApp === null) {
+   req.user = null;
+ } else {
+   const token = req.cookies.RubricsApp;
+   const decodedToken = jwt.decode(token, { complete: true }) || {};
+   req.user = decodedToken.payload;
+ }
+ next();
+}
+app.use(checkAuth)
+
 // **** CONTROLLERS **** //
 require('./controllers/auth-controller.js')(app);
 require('./controllers/rubric-controller.js')(app);
@@ -48,7 +63,7 @@ app.get('/', function(req, res) {
 var PORT = process.env.PORT || 8000;
 
 app.listen(PORT, function(req, res) {
-  console.log("Rubrics App listening on port 8000!");
+  console.log("Rubrics App listening on port " + PORT + "...");
   sync()
     .then(() => console.log('... and Database synced!'))
     .catch( e => console.log(e))

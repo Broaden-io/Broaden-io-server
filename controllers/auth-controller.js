@@ -32,7 +32,7 @@ module.exports = function(app) {
         expiresIn: "60 days"
       });
       // Set a cookie
-      res.cookie('Rubrics App', token, { maxAge: 100000, httpOnly: false });
+      res.cookie('RubricsApp', token, { maxAge: 100000, httpOnly: false });
       // Respond with confirmation
       res.status(200)
       res.json({
