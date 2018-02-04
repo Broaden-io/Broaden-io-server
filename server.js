@@ -7,14 +7,21 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-var acceptOverride = require('connect-acceptoverride');
+const acceptOverride = require('connect-acceptoverride');
+const Sequelize = require('sequelize');
+const db = require("./models");
+
 
 //**** SEQUELIZE ****//
-const Sequelize = require('sequelize');
-const sequelize = new Sequelize('rubric_dev', 'postgres', null, { dialect: 'postgres' });
 const sync = () => {
-  return sequelize.sync({ force: true })
+  return db.sequelize.sync({ force: true })
 }
+// sync() will create all table if they doesn't exist in database
+db.sequelize.sync().then(function () {
+  server.listen(port);
+  server.on('error', onError);
+  server.on('listening', onListening);
+});
 
 //**** ALLOW CORS ****//
 var allowCrossDomain = function(req, res, next) {

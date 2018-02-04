@@ -21,13 +21,16 @@ module.exports = (sequelize, DataTypes) => {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
-
-        // Criterion has many Actions
-        Criterion.hasMany(models.Action, {
-          foreignKey: 'criterionId'
-        })
       }
     }
   });
+
+  Criterion.associate = function(models) {
+    // Criterion has many Actions
+    models.Criterion.hasMany(models.Action, {
+      foreignKey: 'criterionId'
+    });
+  };
+
   return Criterion;
 };

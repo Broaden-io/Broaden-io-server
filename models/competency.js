@@ -12,13 +12,15 @@ module.exports = (sequelize, DataTypes) => {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
-
-        // Competency has many Scales
-        Competency.hasMany(models.Scale, {
-          foreignKey: 'compentencyId'
-        })
       }
     }
   });
+
+  Competency.associate = function(models) {
+    // Competency has many Scales
+    models.Competency.hasMany(models.Scale, {
+      foreignKey: 'compentencyId'
+    });
+  };
   return Competency;
 };

@@ -50,23 +50,19 @@ module.exports = (sequelize, DataTypes) => {
         isAlphanumeric: true
       }
     }
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-
-        // User has many Rubrics
-        User.hasMany(models.Rubric, {
-          foreignKey: 'userId'
-        })
-
-        // User has many Assessments
-        User.hasMany(models.Assessment, {
-          foreignKey: 'userId'
-        })
-
-      }
-    }
   });
+
+  User.associate = function(models) {
+    // User has many Rubrics
+    models.User.hasMany(models.Rubric, {
+      foreignKey: 'userId'
+    });
+
+    // User has many Assessments
+    models.User.hasMany(models.Assessment, {
+      foreignKey: 'userId'
+    });
+  };
+
   return User;
 };

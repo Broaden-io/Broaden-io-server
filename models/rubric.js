@@ -14,10 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       associate: function(models) {
         // associations can be defined here
 
-        // Rubric has many Competencies
-        Rubric.hasMany(models.Competency, {
-          foreignKey: 'rubricId'
-        })
+
 
         // // Rubric belongs to User
         // Rubric.belongsTo(models.User, {
@@ -27,5 +24,13 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
+
+  Rubric.associate = function(models) {
+    // Rubric has many Competencies
+    models.Rubric.hasMany(models.Competency, {
+      foreignKey: 'rubricId'
+    });
+  };
+
   return Rubric;
 };

@@ -12,13 +12,15 @@ module.exports = (sequelize, DataTypes) => {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
-
-        // Scale has many Criteria
-        Scale.hasMany(models.Criterion, {
-          foreignKey: 'scaleId'
-        })
       }
     }
   });
+
+  Scale.associate = function(models) {
+    // Scale has many Criteria
+    models.Scale.hasMany(models.Criterion, {
+      foreignKey: 'scaleId'
+    });
+  };
   return Scale;
 };
