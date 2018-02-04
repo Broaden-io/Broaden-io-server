@@ -4,24 +4,67 @@ module.exports = (sequelize, DataTypes) => {
     username: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true
+      unique: true,
+      validate: {
+        isAlphanumeric: true,
+        len: [2,30],
+        notEmpty: true
+      }
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        isEmail: true
+      }
     },
-    first_name: DataTypes.STRING,
-    last_name: DataTypes.STRING,
+    firstName: {
+      type: DataTypes.STRING,
+      validate: {
+        isAlpha: true
+      }
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      validate: {
+        isAlpha: true
+      }
+    },
     password: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: true
+      }
     },
-    avatar_url: DataTypes.STRING,
-    bio: DataTypes.TEXT
+    avatarURL: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        isUrl: true
+      }
+    },
+    bio: {
+      type: DataTypes.TEXT,
+      validate: {
+        isAlphanumeric: true
+      }
+    }
   }, {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
+
+        // User has many Rubrics
+        User.hasMany(models.Rubric, {
+          foreignKey: 'userId'
+        })
+
+        // User has many Assessments
+        User.hasMany(models.Assessment, {
+          foreignKey: 'userId'
+        })
+
       }
     }
   });

@@ -1,1 +1,15 @@
-sequelize model:create --name User --attributes username:string,email:string,first_name:string,last_name:string,password:string,avatar_url:string,bio:text
+sequelize model:create --name User --attributes username:string,email:string,firstName:string,lastName:string,password:string,avatarURL:string,bio:text
+
+sequelize model:create --name Rubric --attributes name:string,description:text
+
+sequelize model:create --name Competency --attributes name:string
+
+sequelize model:create --name Scale --attributes name:string
+
+sequelize model:create --name Criterion --attributes text:string,level:integer
+
+sequelize model:create --name Action --attributes name:string,url:string
+
+sequelize model:create --name Assessment --attributes rubricJSON:JSON
+
+sequelize model:create --name Answer --attributes data:bool
