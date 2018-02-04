@@ -57,6 +57,11 @@ require('./controllers/rubric-controller.js')(app);
 
 app.get('/', function(req, res) {
   console.log('GET index');
+  bcrypt.hash("Fake123", 10).then(function(hash) {
+    // Store hash in your password DB.
+    console.log('Sample PW Hash is:', hash)
+});
+
   res.send('Rubrics App backend up and running!');
 });
 
