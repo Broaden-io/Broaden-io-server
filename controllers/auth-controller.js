@@ -100,7 +100,12 @@ module.exports = function(app) {
   //LOGOUT USER
   app.get('/logout', function(req, res) {
     console.log('GET logout');
-    res.redirect('/');
+    res.clearCookie('RubricsApp');
+    res.status(200)
+    res.json({
+      message: "Successfully logged out!",
+      isLoggedIn: false
+    })
   });
 
   //SHOW USER
