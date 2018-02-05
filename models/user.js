@@ -47,7 +47,6 @@ module.exports = (sequelize, DataTypes) => {
     bio: {
       type: DataTypes.TEXT,
       validate: {
-        isAlphanumeric: true
       }
     }
   });

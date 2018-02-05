@@ -54,7 +54,6 @@ module.exports = {
       bio: {
         type: Sequelize.TEXT,
         validate: {
-          isAlphanumeric: true
         }
       },
       createdAt: {
