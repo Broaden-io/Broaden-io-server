@@ -1,4 +1,3 @@
-const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt')
 const db = require('../models')
@@ -11,14 +10,6 @@ module.exports = function(app) {
     console.log("Req.body:", req.body)
     const username = req.body.username;
     const password = req.body.password;
-    // const passwordConfirm = req.body.confirmation;
-    //
-    // // Check password confirmation
-    // if (password !== passwordConfirm) {
-    //   // Passwords don't match
-    //   res.send('Password does not match confirmation! Please try again');
-    // }
-
     db.User.create({
       username,
       password,
@@ -39,7 +30,7 @@ module.exports = function(app) {
       // Respond with confirmation
       res.status(200)
       res.json({
-        message: 'Recipe added successfully!',
+        message: 'User added successfully!',
         user: user.get({plain: true})
       })
     })
