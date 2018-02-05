@@ -61,13 +61,15 @@ module.exports = function(app) {
     const username = req.body.username;
     const password = req.body.password;
     // Find this user name
-    db.User.findOne({ where: {username} }).then((user) => {
+    db.User.findOne({ where: {username} }).then((userData) => {
+      const user = userData.dataValues
+      console.log("Here is the user: ", user)
       if (!user) {
         // User not found
         return res.status(401).send({ message: 'Wrong Username or Password' });
       }
       // Check the password
-      user.comparePassword(password, (err, isMatch) => {
+      bcrypt.compare(password, user.password, (err, isMatch) => {
         if (!isMatch) {
           // Password does not match
           return res.status(401).send({ message: "Wrong Username or password"});
@@ -87,10 +89,10 @@ module.exports = function(app) {
       });
     }).catch((err) => {
       console.log(err);
-      res.console.error(err);
       res.json({
         message: "There was a problem logging in.  Please try again or contact support.",
-        isLoggedIn: false
+        isLoggedIn: false,
+        error: err
       })
     });
   });
