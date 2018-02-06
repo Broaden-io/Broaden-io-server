@@ -81,7 +81,29 @@ module.exports = function(app) {
   //DELETE USER
   app.delete('/users/:userId', function(req, res) {
     console.log('DELETE user:', req.params.userId);
-    res.redirect('/');
-  });
 
+    db.User.destroy({
+      where: {
+        id: req.params.userId
+      }
+    }).then(() => {
+      db.User.findOne({
+        where: {
+          id: req.params.userId
+        }
+      }).then((user) => {
+        if (!user) {
+          res.send('Deleting user!')
+        } else {
+          res.send('Error deleting user');
+        }
+      })
+    }).catch((err) => {
+      console.log(err);
+      res.json( {
+        message: "Error deleting user",
+        error: err
+      });
+    });
+  });
 }
