@@ -49,11 +49,12 @@ var checkAuth = function (req, res, next) {
   }
   next();
 }
-app.use(checkAuth)
+app.use(checkAuth);
 
 // **** CONTROLLERS **** //
 require('./controllers/auth-controller.js')(app);
-require('./controllers/rubric-controller.js')(app);
+require('./controllers/rubrics-controller.js')(app);
+require('./controllers/users-controller.js')(app);
 
 app.get('/', function(req, res) {
   console.log('GET index');

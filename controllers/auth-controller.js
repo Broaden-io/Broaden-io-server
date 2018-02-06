@@ -28,7 +28,7 @@ module.exports = function(app) {
       // Set a cookie
       res.cookie('RubricsApp', token, { maxAge: 100000, httpOnly: false });
       // Respond with confirmation
-      res.status(200)
+      res.status(200);
       res.json({
         message: 'User added successfully!',
         user: user.get({plain: true})
@@ -53,7 +53,7 @@ module.exports = function(app) {
     const password = req.body.password;
     // Find this user name
     db.User.findOne({ where: {username} }).then((userData) => {
-      const user = userData.dataValues
+      const user = userData.dataValues;
       console.log("Here is the user: ", user)
       if (!user) {
         // User not found
@@ -97,24 +97,6 @@ module.exports = function(app) {
       message: "Successfully logged out!",
       isLoggedIn: false
     })
-  });
-
-  //SHOW USER
-  app.get('/user/:userId', function(req, res) {
-    console.log('SHOW user:', req.params.userId);
-    res.redirect('/');
-  });
-
-  //UPDATE USER
-  app.put('/user/:userId', function(req, res) {
-    console.log('PUT user:', req.params.userId);
-    res.redirect('/');
-  });
-
-  //DELETE USER
-  app.delete('/user/:userId', function(req, res) {
-    console.log('DELETE user:', req.params.userId);
-    res.redirect('/');
   });
 
 }
