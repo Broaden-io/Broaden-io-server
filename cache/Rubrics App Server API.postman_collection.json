@@ -12,8 +12,58 @@
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "raw",
-					"raw": ""
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "TestUser",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "password",
+							"value": "$2a$10$Sn2y0uVfpKfXLntxYs2w8.UsHuTZspHtEiwIrzmnq/oitUHvS1h7W",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "email",
+							"value": "test@user.net",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "firstName",
+							"value": "Testy",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "lastName",
+							"value": "McTestFace",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "avatar_url",
+							"value": "https://www.test.com/test.jpg",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "bio",
+							"value": "I am a testy test test test test test tester mctest test",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/x-www-form-urlencoded",
+							"type": "text",
+							"description": "",
+							"disabled": true
+						}
+					]
 				},
 				"url": {
 					"raw": "http://localhost:8000/signup",
@@ -30,7 +80,7 @@
 			},
 			"response": [
 				{
-					"id": "72e2a1bf-6314-4d8b-a0ca-7d38e8b4dbcb",
+					"id": "f3c630f2-5e2c-49db-a0e1-faed628f32b7",
 					"name": "Default",
 					"originalRequest": {
 						"method": "POST",
@@ -62,10 +112,28 @@
 			"name": "http://localhost:8000/login",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
 				"body": {
-					"mode": "raw",
-					"raw": ""
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "tassos",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Fake123",
+							"description": "",
+							"type": "text"
+						}
+					]
 				},
 				"url": {
 					"raw": "http://localhost:8000/login",
@@ -82,7 +150,7 @@
 			},
 			"response": [
 				{
-					"id": "17011c16-19ba-4015-afae-4fd1a39576f9",
+					"id": "8d0bafd0-3c1c-44e1-89dc-a0aaecbe227a",
 					"name": "Default",
 					"originalRequest": {
 						"method": "POST",
@@ -134,7 +202,7 @@
 			},
 			"response": [
 				{
-					"id": "ec087e31-e6e5-4588-b3eb-ab2216cd802d",
+					"id": "c2b734ab-9fc8-42e7-844e-500c1097f474",
 					"name": "Default",
 					"originalRequest": {
 						"method": "GET",
@@ -161,6 +229,41 @@
 					"body": ""
 				}
 			]
+		},
+		{
+			"name": "User Show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8000/users/10002",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"10002"
+					]
+				},
+				"description": "Get user data for the profile"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": ""
+				},
+				"description": "Get Profile"
+			},
+			"response": []
 		}
 	]
 }
