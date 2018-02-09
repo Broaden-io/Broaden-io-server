@@ -1,3 +1,4 @@
+const db = require('../models');
 
 module.exports = (app) => {
 
@@ -9,10 +10,11 @@ module.exports = (app) => {
       res.json(rubrics)
     })
     .catch((err) => {
-      if (err) {
-        console.log("Uhh oh!! ", err.message)
-        res.error(err)
-      }
+      console.log(err);
+      res.json( {
+        message: "Error!",
+        error: err
+      })
     })
   });
 
@@ -30,10 +32,11 @@ module.exports = (app) => {
       })
     })
     .catch((err) => {
-      if (err) {
-        console.log("Uhh oh!! ", err.message)
-        res.error(err)
-      }
+      console.log(err);
+      res.json( {
+        message: "Error!",
+        error: err
+      })
     })
   });
 
@@ -49,13 +52,13 @@ module.exports = (app) => {
       })
     })
     .catch((err) => {
-      if (err) {
-        console.log("Uhh oh!! ", err.message)
-        res.status(401)
-        res.error(err)
-      }
+      console.log(err);
+      res.json( {
+        message: "Error!",
+        error: err
+      })
     })
-  })
+  });
 
   // Delete a Rubric
   app.delete('/rubrics/:id/delete', (req, res) => {
@@ -70,10 +73,11 @@ module.exports = (app) => {
       })
     })
     .catch((err) => {
-      if (err) {
-        console.log("Uhh oh!! ", err.message)
-        res.error(err)
-      }
+      console.log(err);
+      res.json( {
+        message: "Error!",
+        error: err
+      })
     })
-  })
+  });
 }
