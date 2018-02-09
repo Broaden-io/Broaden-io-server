@@ -9,20 +9,6 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     description: DataTypes.TEXT
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-
-
-
-        // // Rubric belongs to User
-        // Rubric.belongsTo(models.User, {
-        //
-        // })
-
-      }
-    }
   });
 
   Rubric.associate = function(models) {
