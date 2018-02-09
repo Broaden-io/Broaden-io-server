@@ -11,7 +11,7 @@ module.exports = (app) => {
     })
     .catch((err) => {
       console.log(err);
-      res.status(404);
+      res.status(400);
       res.json( {
         message: "Error!",
         error: err
@@ -34,7 +34,7 @@ module.exports = (app) => {
     })
     .catch((err) => {
       console.log(err);
-      res.status(404);
+      res.status(400);
       res.json({
         message: "Error!",
         error: err
@@ -55,7 +55,7 @@ module.exports = (app) => {
     })
     .catch((err) => {
       console.log(err);
-      res.status(404);
+      res.status(400);
       res.json({
         message: "Error!",
         error: err
@@ -77,7 +77,7 @@ module.exports = (app) => {
     })
     .catch((err) => {
       console.log(err);
-      res.status(404);
+      res.status(400);
       res.json({
         message: "Error!",
         error: err
