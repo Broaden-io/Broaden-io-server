@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:8000/signup",
+			"name": "Sign Up",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -16,7 +16,7 @@
 					"urlencoded": [
 						{
 							"key": "username",
-							"value": "TestUser",
+							"value": "Test2User",
 							"type": "text",
 							"description": ""
 						},
@@ -34,13 +34,13 @@
 						},
 						{
 							"key": "firstName",
-							"value": "Testy",
+							"value": "Facey",
 							"type": "text",
 							"description": ""
 						},
 						{
 							"key": "lastName",
-							"value": "McTestFace",
+							"value": "McFaceTest",
 							"type": "text",
 							"description": ""
 						},
@@ -80,7 +80,7 @@
 			},
 			"response": [
 				{
-					"id": "f3c630f2-5e2c-49db-a0e1-faed628f32b7",
+					"id": "9a281ffb-a283-4cc4-9fec-05ef4ee40a75",
 					"name": "Default",
 					"originalRequest": {
 						"method": "POST",
@@ -109,7 +109,7 @@
 			]
 		},
 		{
-			"name": "http://localhost:8000/login",
+			"name": "Log In",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -150,7 +150,7 @@
 			},
 			"response": [
 				{
-					"id": "8d0bafd0-3c1c-44e1-89dc-a0aaecbe227a",
+					"id": "980a9d60-eea5-46fe-a21c-cc80ee7f5084",
 					"name": "Default",
 					"originalRequest": {
 						"method": "POST",
@@ -179,7 +179,7 @@
 			]
 		},
 		{
-			"name": "http://localhost:8000/logout",
+			"name": "Log Out",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -202,7 +202,7 @@
 			},
 			"response": [
 				{
-					"id": "c2b734ab-9fc8-42e7-844e-500c1097f474",
+					"id": "255e2048-53c4-4aa1-aeb6-0fe4019a361c",
 					"name": "Default",
 					"originalRequest": {
 						"method": "GET",
@@ -259,9 +259,87 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": ""
+					"raw": "localhost:8000/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"profile"
+					]
 				},
 				"description": "Get Profile"
+			},
+			"response": []
+		},
+		{
+			"name": "Rubrics CREATE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Test Rubric",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Here is a test description of the rubric",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "userId",
+							"value": "10001",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/users/10001/rubrics/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"10001",
+						"rubrics",
+						"create"
+					]
+				},
+				"description": "Creates a new rubric.  Requires the userId that the rubric belongs to."
+			},
+			"response": []
+		},
+		{
+			"name": "Rubrics SHOW",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8000/rubrics/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"rubrics",
+						"1"
+					]
+				},
+				"description": "Displays a single rubric's data including all nested resources"
 			},
 			"response": []
 		}

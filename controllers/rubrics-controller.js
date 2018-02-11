@@ -43,8 +43,9 @@ module.exports = (app) => {
   });
 
   // Create a Rubric
-  app.post('/rubrics/create', (req, res) => {
-    db.Rubric.create(req.body)
+  app.post('/users/:userId/rubrics/create', (req, res) => {
+    const newRubric = {...req.body, userId: req.params.userId}
+    db.Rubric.create(newRubric)
     .then((rubric) => {
       console.log("Response from Rubric/Create: ", rubric)
       res.status(200)

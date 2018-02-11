@@ -8,21 +8,26 @@ const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const acceptOverride = require('connect-acceptoverride');
-const Sequelize = require('sequelize');
+var cors = require('cors')
 const db = require("./models");
 
-//**** SEQUELIZE ****//
-const sync = () => {
-  return db.sequelize.sync()
-}
-
 //**** ALLOW CORS ****//
-var allowCrossDomain = function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', "*");
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-}
+// var allowCrossDomain = function(req, res, next) {
+//   res.header('Access-Control-Allow-Origin', "*");
+//   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+//   res.header('Access-Control-Allow-Headers', 'Content-Type');
+//   next();
+// }
+// var whitelist = ['http://localhost:3000', 'https://localhost:3000']
+// var corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   }
+// }
 
 //**** MIDDLEWARE ****//
 app.use(express.static('public'))
@@ -30,11 +35,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(acceptOverride())
-app.use(function (req, res, next) {
-  var format = req.query.format
-  if (format) { req.headers.accept = 'application/' + format }
-  next();
-});
+app.use(cors())
 
 // Auth Middleware
 var checkAuth = function (req, res, next) {
@@ -70,7 +71,7 @@ var PORT = process.env.PORT || 8000;
 
 app.listen(PORT, function(req, res) {
   console.log("Rubrics App listening on port " + PORT + "...");
-  sync()
+  db.sequelize.sync()
   .then(() => console.log('... Sequelize synced with Database!'))
   .catch( e => console.log(e))
 });
