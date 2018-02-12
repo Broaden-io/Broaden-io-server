@@ -1,7 +1,7 @@
 {
   "name": "rubrics-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Rubrics Progress tracker platform for providing students with actionable and measureable progress towards leveling up their compentencies.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,6 +20,7 @@
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "connect-acceptoverride": "0.0.3",
+    "cookie": "^0.3.1",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
     "dotenv": "^5.0.0",
