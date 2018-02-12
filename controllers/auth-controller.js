@@ -57,13 +57,13 @@ module.exports = function(app) {
       console.log("Here is the user: ", user)
       if (!user) {
         // User not found
-        return res.status(401).send({ message: 'Wrong Username or Password' });
+        return res.status(400).send({ message: 'Wrong Username or Password' });
       }
       // Check the password
       bcrypt.compare(password, user.password, (err, isMatch) => {
         if (!isMatch) {
           // Password does not match
-          return res.status(401).send({ message: "Wrong Username or password"});
+          return res.status(400).send({ message: "Wrong Username or password"});
         }
         // Create a token
         const token = jwt.sign(
@@ -75,7 +75,8 @@ module.exports = function(app) {
         res.status(200)
         res.json({
           message: "Successfully logged in!",
-          isLoggedIn: true
+          isLoggedIn: true,
+          userId: user.id
         })
       });
     }).catch((err) => {
@@ -98,5 +99,51 @@ module.exports = function(app) {
       isLoggedIn: false
     })
   });
+
+  app.get('/authcheck', (req, res) => {
+    console.log('Auth Check');
+    if (req.user) {
+      const userId = req.user.id
+      db.User.findOne({ where: { id: userId} }).then((userData) => {
+        const user = userData.dataValues;
+        if (!user) {
+          // User not found
+          return res.status(400).send({ message: 'Logged in but cannot find user in our database' });
+        }
+        res.status(200);
+        res.json({
+          message: "You are currently logged in",
+          isLoggedIn: true,
+          userId: req.user.id,
+          user: {
+            id: user.id,
+            username: user.username,
+            email: user.email,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            bio: user.bio,
+            avatarURL: user.avatarURL
+          }
+        });
+      })
+      .catch((err) => {
+        if (err) {
+          res.status(400);
+          res.json({
+            message: "There was an error \n" + err,
+            isLoggedIn: false,
+            userId: req.user.id
+          });
+        }
+      })
+    } else {
+      res.status(400);
+      res.json({
+        message: "You are not logged in...",
+        isLoggedIn: false,
+        userId: null
+      })
+    }
+  })
 
 }
