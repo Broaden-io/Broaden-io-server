@@ -15,6 +15,10 @@ module.exports = (sequelize, DataTypes) => {
     models.Rubric.hasMany(models.Competency, {
       foreignKey: 'rubricId'
     });
+
+    models.Rubric.hasMany(models.Assessment, {
+      foreignKey: 'rubricId'
+    });
   };
 
   return Rubric;
