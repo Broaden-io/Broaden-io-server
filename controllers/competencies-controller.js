@@ -2,8 +2,8 @@ const db = require('../models');
 
 module.exports = (app) => {
 
-  //TODO: Index
-  // Show/Edit a Competency
+
+  // Show Competency
   app.get('/competencies/:id', (req, res) => {
     const competencyId = req.params.id
     db.Competency.findById(competencyId)
@@ -25,7 +25,7 @@ module.exports = (app) => {
     })
   });
 
-    // UPDATE
+    // UPDATE a Competency
   app.put('/competencies/:id/update', (req, res) => {
     const competencyId = req.params.id
     const competency = req.body
