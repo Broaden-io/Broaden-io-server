@@ -21,6 +21,7 @@ module.exports = function(app) {
     }).then(() => db.User.findOrCreate({
       where: { username }
     })).spread((user, created) => {
+      console.log("Created: ", created)
       // Create a new jwt token
       const token = jwt.sign({ id: user.id }, process.env.SECRET, {
         expiresIn: "60 days"
@@ -53,7 +54,7 @@ module.exports = function(app) {
     const password = req.body.password;
     // Find this user name
     db.User.findOne({ where: {username} }).then((userData) => {
-      const user = userData.dataValues;
+      const user = userData;
       console.log("Here is the user: ", user)
       if (!user) {
         // User not found
@@ -63,6 +64,8 @@ module.exports = function(app) {
       bcrypt.compare(password, user.password, (err, isMatch) => {
         if (!isMatch) {
           // Password does not match
+          console.log('Password1: ', password)
+          console.log('Password2: ', user.password)
           return res.status(400).send({ message: "Wrong Username or password"});
         }
         // Create a token
