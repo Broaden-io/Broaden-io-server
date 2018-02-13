@@ -73,5 +73,5 @@ app.listen(PORT, function(req, res) {
   console.log("Rubrics App listening on port " + PORT + "...");
   db.sequelize.sync({ force: false })
   .then(() => console.log('... Sequelize synced with Database!'))
-  .catch( e => console.log(e))
+  .catch( e => console.log("Error(s): ", e))
 });
