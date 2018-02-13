@@ -56,6 +56,7 @@ app.use(checkAuth);
 require('./controllers/auth-controller.js')(app);
 require('./controllers/rubrics-controller.js')(app);
 require('./controllers/users-controller.js')(app);
+require('./controllers/competencies-controller.js')(app);
 
 app.get('/', function(req, res) {
   console.log('GET index');
