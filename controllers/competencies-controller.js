@@ -25,6 +25,27 @@ module.exports = (app) => {
     })
   });
 
+    // UPDATE
+  app.put('/competencies/:id/update', (req, res) => {
+    const competencyId = req.params.id
+    const competency = req.body
+    db.Competency.update(competency, {
+      where: { id: competencyId }
+    }).then((response) => {
+        res.status(200)
+        res.json({
+          msg: 'competency updated successfully!',
+        })
+      }).catch((err) => {
+        console.log(err);
+        res.status(400);
+        res.json({
+          message: "Error!",
+          error: err
+        })
+      })
+    });
+
   // Create a Competency
   app.post('/rubrics/:rubricId/competencies/create', (req, res) => {
     const newCompetency = {...req.body, rubricId: req.params.rubricId}
