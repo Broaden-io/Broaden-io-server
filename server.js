@@ -39,6 +39,8 @@ app.use(cors())
 
 // Auth Middleware
 var checkAuth = function (req, res, next) {
+  console.log("************************************Checking authentication");
+  console.log("Checking authentication************************************");
   console.log("Checking authentication");
 
   if (typeof req.cookies.RubricsApp === 'undefined' || req.cookies.RubricsApp === null) {
@@ -51,12 +53,15 @@ var checkAuth = function (req, res, next) {
   next();
 }
 app.use(checkAuth);
+console.log("Checking authentication************************************");
+
 
 // **** CONTROLLERS **** //
 require('./controllers/auth-controller.js')(app);
 require('./controllers/rubrics-controller.js')(app);
 require('./controllers/users-controller.js')(app);
 require('./controllers/competencies-controller.js')(app);
+require('./controllers/scales-controller.js')(app);
 
 app.get('/', function(req, res) {
   console.log('GET index');
