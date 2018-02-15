@@ -5,7 +5,7 @@ module.exports = (app) => {
   // Show Scale
   app.get('/scales/:id', (req, res) => {
     const scaleId = req.params.id
-    db.Scales.findById(scaleId)
+    db.Scale.findById(scaleId)
     .then((scale) => {
       console.log("Response from scale/Show: ", scale)
       res.status(200)
@@ -29,7 +29,7 @@ module.exports = (app) => {
   app.put('/scales/:id/update', (req, res) => {
     const scaleId = req.params.id
     const scale = req.body
-    db.Scales.update(scale, {
+    db.Scale.update(scale, {
       where: { id: scaleId }
     }).then((response) => {
         res.status(200)
@@ -49,7 +49,7 @@ module.exports = (app) => {
   // Create a scale
   app.post('/competencies/:competencyId/scales/create', (req, res) => {
     const newScale = {...req.body, competencyId: req.params.competencyId}
-    db.Scales.create(newScale)
+    db.Scale.create(newScale)
     .then((scale) => {
       console.log("Response from scale/Create: ", scale)
       res.status(200)
@@ -72,7 +72,7 @@ module.exports = (app) => {
   // Delete a scale
   app.delete('/scales/:id/delete', (req, res) => {
     const scaleId = req.params.id
-    db.Scales.destroy({ where: { id: scaleId } })
+    db.Scale.destroy({ where: { id: scaleId } })
     .then((response) => {
       console.log("Response from scale/Delete: ", response)
       res.status(200)

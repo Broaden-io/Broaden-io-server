@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   Competency.associate = function(models) {
     // Competency has many Scales
     models.Competency.hasMany(models.Scale, {
-      foreignKey: 'compentencyId'
+      foreignKey: 'competencyId'
     });
   };
   return Competency;
