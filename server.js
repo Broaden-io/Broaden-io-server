@@ -43,8 +43,12 @@ var checkAuth = function (req, res, next) {
   console.log("Checking authentication************************************");
   console.log("Checking authentication");
 
+  console.log('cookies')
+  console.log(req.cookie)
+
   if (typeof req.cookies.RubricsApp === 'undefined' || req.cookies.RubricsApp === null) {
     req.user = null;
+    console.log("null user in checkAuth")
   } else {
     const token = req.cookies.RubricsApp;
     const decodedToken = jwt.decode(token, { complete: true }) || {};
