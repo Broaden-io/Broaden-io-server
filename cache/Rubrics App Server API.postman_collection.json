@@ -1,7 +1,7 @@
 {
 	"info": {
 		"name": "Rubrics App Server API",
-		"_postman_id": "acef4edb-56a6-a30a-5c84-8d665043035d",
+		"_postman_id": "443bd1de-fd64-db07-ee28-073570228aee",
 		"description": "# Introduction\nRubrics App API is a restful API designed for providing third-party users access to the Rubrics App data.\n\n# Overview\nDevelopers should request an api token to get started.\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -72,7 +72,7 @@
 			},
 			"response": [
 				{
-					"id": "12b870f4-c116-4b0f-aabe-d296e244f114",
+					"id": "4095f7c3-d1cd-43af-8ab1-d7617363dd2e",
 					"name": "Default",
 					"originalRequest": {
 						"method": "POST",
@@ -143,7 +143,7 @@
 			},
 			"response": [
 				{
-					"id": "d1973e56-48ba-4539-970c-7c6c6632da4d",
+					"id": "c8e20edf-7485-42af-9489-9041955a8ab7",
 					"name": "Default",
 					"originalRequest": {
 						"method": "POST",
@@ -198,7 +198,7 @@
 			},
 			"response": [
 				{
-					"id": "6fe73ce7-482c-4dee-b6f5-b0cd1b19d7f1",
+					"id": "d0af6465-0328-4b03-9c9e-ff610f17887c",
 					"name": "Default",
 					"originalRequest": {
 						"method": "GET",
@@ -349,7 +349,7 @@
 			"response": []
 		},
 		{
-			"name": "create Scale",
+			"name": "Create Scale",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -364,19 +364,16 @@
 						{
 							"key": "name",
 							"value": "test",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "description",
 							"value": "fdsklfjdskl",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "rubricId",
 							"value": "10000",
-							"description": "",
 							"type": "text",
 							"disabled": true
 						}
@@ -395,17 +392,19 @@
 						"scales",
 						"create"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "Scale SHOW",
+			"name": "Show Scale",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:8000/scales/1",
 					"host": [
@@ -437,19 +436,16 @@
 						{
 							"key": "name",
 							"value": "test",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "description",
 							"value": "fdsklfjdskl",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "rubricId",
 							"value": "10000",
-							"description": "",
 							"type": "text",
 							"disabled": true
 						}
@@ -467,17 +463,19 @@
 						"1",
 						"delete"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "SHOW Criteria",
+			"name": "Show Criteria",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:8000/criteria/1",
 					"host": [
@@ -494,7 +492,7 @@
 			"response": []
 		},
 		{
-			"name": "create Criterion",
+			"name": "Create Criterion",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -507,28 +505,24 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "name",
-							"value": "test",
-							"description": "",
+							"key": "level",
+							"value": "1",
 							"type": "text"
 						},
 						{
-							"key": "description",
-							"value": "fdsklfjdskl",
-							"description": "",
+							"key": "text",
+							"value": "This is the text of the criteria",
 							"type": "text"
 						},
 						{
-							"key": "rubricId",
-							"value": "10000",
-							"description": "",
-							"type": "text",
-							"disabled": true
+							"key": "id",
+							"value": "1",
+							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8000/scales/5/criterion/create",
+					"raw": "http://localhost:8000/scales/1/criteria/create",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -536,16 +530,15 @@
 					"port": "8000",
 					"path": [
 						"scales",
-						"5",
-						"criterion",
+						"1",
+						"criteria",
 						"create"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": [
 				{
-					"id": "fe505748-37bd-4c36-8214-c484bd9a0ef0",
+					"id": "40d74e98-84b9-4792-ab02-444594fd7899",
 					"name": "create Criteria",
 					"originalRequest": {
 						"method": "POST",
@@ -561,19 +554,16 @@
 								{
 									"key": "text",
 									"value": "test",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "level",
 									"value": "1",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "rubricId",
 									"value": "10000",
-									"description": "",
 									"type": "text",
 									"disabled": true
 								}
@@ -670,19 +660,16 @@
 						{
 							"key": "text",
 							"value": "test",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "level",
 							"value": "1",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "rubricId",
 							"value": "10000",
-							"description": "",
 							"type": "text",
 							"disabled": true
 						}
@@ -700,13 +687,102 @@
 						"3",
 						"delete"
 					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update/Edit Criteria",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "text",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "level",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "rubricId",
+							"value": "10000",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/criteria/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"criteria",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Competency",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/rubrics/1/competencies/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"rubrics",
+						"1",
+						"competencies",
+						"create"
+					]
 				},
 				"description": ""
 			},
 			"response": []
 		},
 		{
-			"name": "Update/Edit Criteria",
+			"name": "Delete Competency",
 			"request": {
 				"method": "DELETE",
 				"header": [
@@ -721,34 +797,31 @@
 						{
 							"key": "text",
 							"value": "test",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "level",
 							"value": "1",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "rubricId",
 							"value": "10000",
-							"description": "",
 							"type": "text",
 							"disabled": true
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8000/criteria/3/delete",
+					"raw": "http://localhost:8000/competencies/1/delete",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
-						"criteria",
-						"3",
+						"competencies",
+						"1",
 						"delete"
 					]
 				},
