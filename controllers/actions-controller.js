@@ -24,7 +24,6 @@ module.exports = (app) => {
     })
   });
 
-  //TODO: Code Review  whether the actionId exists, it does not ever hits catch error
     // UPDATE a action
   app.put('/actions/:id/update', (req, res) => {
     const actionId = req.params.id
@@ -68,7 +67,6 @@ module.exports = (app) => {
     })
   });
 
-  //TODO: Code Review  whether the actionId exists, it does not ever hits catch error
   // Delete a Action
   app.delete('/actions/:id/delete', (req, res) => {
     const actionId = req.params.id
