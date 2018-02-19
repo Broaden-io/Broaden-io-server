@@ -4,8 +4,6 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       allowNull: false,
       type: DataTypes.STRING,
-      validate: {
-      }
     },
     description: DataTypes.TEXT
   });
