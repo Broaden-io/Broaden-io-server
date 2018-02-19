@@ -26,6 +26,9 @@ module.exports = (app) => {
     db.Rubric.findById(rubricId)
     .then((rubric) => {
       console.log("Response from Rubric/Show: ", rubric)
+      rubric.getCompetencies().then(competencies => {
+        console.log("Here are the results from rubric.getCompetencies()", competencies[0].dataValues)
+      })
       res.status(200)
       res.json({
         message: "Rubric request successful",

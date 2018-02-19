@@ -39,10 +39,6 @@ app.use(cors())
 
 // Auth Middleware
 var checkAuth = function (req, res, next) {
-  console.log("************************************Checking authentication");
-  console.log("Checking authentication************************************");
-  console.log("Checking authentication");
-
   console.log('cookies')
   console.log(req.cookie)
 
@@ -57,7 +53,6 @@ var checkAuth = function (req, res, next) {
   next();
 }
 app.use(checkAuth);
-console.log("Checking authentication************************************");
 
 
 // **** CONTROLLERS **** //
@@ -84,5 +79,5 @@ app.listen(PORT, function(req, res) {
   console.log("Rubrics App listening on port " + PORT + "...");
   db.sequelize.sync({ force: false })
   .then(() => console.log('... Sequelize synced with Database!'))
-  .catch( e => console.log("Error(s): ", e))
+  .catch(e => console.log("Errors syncing with Sequelize: ", e))
 });
