@@ -4,9 +4,6 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       allowNull: true,
       type: DataTypes.STRING,
-      validate: {
-        isAlphanumeric: true
-      }
     }
   }, {
     classMethods: {

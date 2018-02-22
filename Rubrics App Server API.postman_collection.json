@@ -1,7 +1,7 @@
 {
 	"info": {
 		"name": "Rubrics App Server API",
-		"_postman_id": "443bd1de-fd64-db07-ee28-073570228aee",
+		"_postman_id": "7d07fb95-d322-e97d-c552-e6a34d1a72db",
 		"description": "# Introduction\nRubrics App API is a restful API designed for providing third-party users access to the Rubrics App data.\n\n# Overview\nDevelopers should request an api token to get started.\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -72,7 +72,7 @@
 			},
 			"response": [
 				{
-					"id": "4095f7c3-d1cd-43af-8ab1-d7617363dd2e",
+					"id": "030be08a-c842-4f34-997b-c94bfaaa271e",
 					"name": "Default",
 					"originalRequest": {
 						"method": "POST",
@@ -143,7 +143,7 @@
 			},
 			"response": [
 				{
-					"id": "c8e20edf-7485-42af-9489-9041955a8ab7",
+					"id": "f89e2a28-bd4f-4e5c-b4f1-06655d59a4cd",
 					"name": "Default",
 					"originalRequest": {
 						"method": "POST",
@@ -198,7 +198,7 @@
 			},
 			"response": [
 				{
-					"id": "d0af6465-0328-4b03-9c9e-ff610f17887c",
+					"id": "6f04258b-bb93-4bad-8a6c-cfe71e6e5a42",
 					"name": "Default",
 					"originalRequest": {
 						"method": "GET",
@@ -538,7 +538,7 @@
 			},
 			"response": [
 				{
-					"id": "40d74e98-84b9-4792-ab02-444594fd7899",
+					"id": "ef52696d-442a-43ca-9746-2742cfaa43d1",
 					"name": "create Criteria",
 					"originalRequest": {
 						"method": "POST",
@@ -758,7 +758,6 @@
 						{
 							"key": "id",
 							"value": "1",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -776,13 +775,107 @@
 						"competencies",
 						"create"
 					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Competency",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "text",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "level",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "rubricId",
+							"value": "10000",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/competencies/1/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"competencies",
+						"1",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Action",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "level",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "text",
+							"value": "This is the text of the criteria",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/criteria/1/actions/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"criteria",
+						"1",
+						"actions",
+						"create"
+					]
 				},
 				"description": ""
 			},
 			"response": []
 		},
 		{
-			"name": "Delete Competency",
+			"name": "Delete Action",
 			"request": {
 				"method": "DELETE",
 				"header": [

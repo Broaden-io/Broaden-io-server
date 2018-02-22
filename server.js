@@ -39,10 +39,12 @@ app.use(cors())
 
 // Auth Middleware
 var checkAuth = function (req, res, next) {
-  console.log("Checking authentication");
+  console.log('cookies')
+  console.log(req.cookie)
 
   if (typeof req.cookies.RubricsApp === 'undefined' || req.cookies.RubricsApp === null) {
     req.user = null;
+    console.log("null user in checkAuth")
   } else {
     const token = req.cookies.RubricsApp;
     const decodedToken = jwt.decode(token, { complete: true }) || {};
@@ -52,11 +54,15 @@ var checkAuth = function (req, res, next) {
 }
 app.use(checkAuth);
 
+
 // **** CONTROLLERS **** //
 require('./controllers/auth-controller.js')(app);
 require('./controllers/rubrics-controller.js')(app);
 require('./controllers/users-controller.js')(app);
 require('./controllers/competencies-controller.js')(app);
+require('./controllers/scales-controller.js')(app);
+require('./controllers/criteria-controller.js')(app);
+require('./controllers/actions-controller.js')(app);
 
 app.get('/', function(req, res) {
   console.log('GET index');
@@ -74,5 +80,5 @@ app.listen(PORT, function(req, res) {
   console.log("Rubrics App listening on port " + PORT + "...");
   db.sequelize.sync({ force: true })
   .then(() => console.log('... Sequelize synced with Database!'))
-  .catch( e => console.log("Error(s): ", e))
+  .catch(e => console.log("Errors syncing with Sequelize: ", e))
 });

@@ -20,12 +20,15 @@ module.exports = (app) => {
   });
 
   // TODO: Still need to implement a nested retrieval of all child resources
-  // Show/Edit a Rubric
+  // Show a Rubric
   app.get('/rubrics/:id', (req, res) => {
     const rubricId = req.params.id
     db.Rubric.findById(rubricId)
     .then((rubric) => {
       console.log("Response from Rubric/Show: ", rubric)
+      rubric.getCompetencies().then(competencies => {
+        console.log("Here are the results from rubric.getCompetencies()", competencies[0].dataValues)
+      })
       res.status(200)
       res.json({
         message: "Rubric request successful",
@@ -41,6 +44,27 @@ module.exports = (app) => {
       })
     })
   });
+
+    // UPDATE
+  app.put('/rubrics/:id/update', (req, res) => {
+    const rubricId = req.params.id
+    const rubric = req.body
+    db.Rubric.update(rubric, {
+      where: { id: rubricId }
+    }).then((response) => {
+        res.status(200)
+        res.json({
+          msg: 'Rubric updated successfully!',
+        })
+      }).catch((err) => {
+        console.log(err);
+        res.status(400);
+        res.json({
+          message: "Error!",
+          error: err
+        })
+      })
+    });
 
   // Create a Rubric
   app.post('/users/:userId/rubrics/create', (req, res) => {

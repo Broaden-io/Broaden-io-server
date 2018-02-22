@@ -73,14 +73,17 @@ module.exports = function(app) {
           { id: user.id, username: user.username }, process.env.SECRET,
           { expiresIn: "60 days" }
         );
+        console.log(token)
         // Set a cookie and redirect to root
-        res.cookie('RubricsApp', token, { maxAge: 900000, httpOnly: true });
+        res.cookie('RubricsApp', token, { maxAge: 900000, httpOnly: false });
         res.status(200)
         res.json({
           message: "Successfully logged in!",
           isLoggedIn: true,
-          userId: user.id
+          userId: user.id,
+          token: token
         })
+        next();
       });
     }).catch((err) => {
       console.log(err);
@@ -105,12 +108,14 @@ module.exports = function(app) {
 
   app.get('/authcheck', (req, res) => {
     console.log('Auth Check');
+    console.log(req.user);
     if (req.user) {
       const userId = req.user.id
       db.User.findOne({ where: { id: userId} }).then((userData) => {
         const user = userData.dataValues;
         if (!user) {
           // User not found
+          console.log('Logged in but cannot find user in our database')
           return res.status(400).send({ message: 'Logged in but cannot find user in our database' });
         }
         res.status(200);
@@ -131,15 +136,18 @@ module.exports = function(app) {
       })
       .catch((err) => {
         if (err) {
+          console.log("There was an error \n" + err);
           res.status(400);
           res.json({
             message: "There was an error \n" + err,
             isLoggedIn: false,
-            userId: req.user.id
+            userId: req.user.id,
+            token: token
           });
         }
       })
     } else {
+      console.log("other....")
       res.status(400);
       res.json({
         message: "You are not logged in...",

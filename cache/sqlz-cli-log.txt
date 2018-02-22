@@ -13,3 +13,15 @@ sequelize model:create --name Action --attributes name:string,url:string
 sequelize model:create --name Assessment --attributes rubricJSON:JSON
 
 sequelize model:create --name Answer --attributes data:bool
+
+sequelize seed:generate --name UsersSeed
+
+sequelize seed:generate --name RubricsSeed
+
+sequelize seed:generate --name CompetenciesSeed
+
+sequelize seed:generate --name ScalesSeed
+
+sequelize seed:generate --name CriteriaSeed
+
+sequelize seed:generate --name ActionsSeed

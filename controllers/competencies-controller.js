@@ -2,8 +2,7 @@ const db = require('../models');
 
 module.exports = (app) => {
 
-  //TODO: Index
-  // Show/Edit a Competency
+  // Show Competency
   app.get('/competencies/:id', (req, res) => {
     const competencyId = req.params.id
     db.Competency.findById(competencyId)
@@ -24,6 +23,28 @@ module.exports = (app) => {
       })
     })
   });
+
+  //TODO: Code Review  whether the competencyId exists, it does not ever hits catch error
+    // UPDATE a Competency
+  app.put('/competencies/:id/update', (req, res) => {
+    const competencyId = req.params.id
+    const competency = req.body
+    db.Competency.update(competency, {
+      where: { id: competencyId }
+    }).then((response) => {
+        res.status(200)
+        res.json({
+          msg: 'competency updated successfully!',
+        })
+      }).catch((err) => {
+        console.log(err);
+        res.status(400);
+        res.json({
+          message: "Error!",
+          error: err
+        })
+      })
+    });
 
   // Create a Competency
   app.post('/rubrics/:rubricId/competencies/create', (req, res) => {
@@ -46,7 +67,8 @@ module.exports = (app) => {
       })
     })
   });
-
+  
+  //TODO: Code Review  whether the competencyId exists, it does not ever hits catch error
   // Delete a Competency
   app.delete('/competencies/:id/delete', (req, res) => {
     const competencyId = req.params.id
