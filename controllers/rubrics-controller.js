@@ -15,7 +15,7 @@ module.exports = (app) => {
       res.json( {
         message: "Error!",
         error: err
-      })
+      }) 
     })
   });
 
