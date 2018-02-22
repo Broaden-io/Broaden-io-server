@@ -19,27 +19,27 @@ module.exports = (app) => {
     })
   });
 
-  // TODO: Still need to implement a nested retrieval of all child resources
   // Show a Rubric
   app.get('/rubrics/:id', (req, res) => {
     const rubricId = req.params.id
     db.Rubric.findOne({
       id: rubricId,
-      include: [
-        { model: db.Competency,
-          include: [
-            { model: db.Scale,
-              include: [
-                { model: db.Criterion,
-                  include: [
-                    { model: db.Action }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      include: [{
+        model: db.Competency,
+        include: [{
+          model: db.Scale,
+          include: [{
+            model: db.Criterion,
+            include: [{
+              model: db.Action,
+            }],
+            order: [ [ { model: db.Action }, 'id', 'ASC' ] ]
+          }],
+          order: [ [ { model: db.Criterion }, 'id', 'ASC' ] ]
+        }],
+        order: [ [ { model: db.Scale }, 'id', 'ASC' ] ]
+      }],
+      order: [ [ { model: db.Competency }, 'id', 'ASC' ] ]
     })
     .then((rubric) => {
       console.log("Response from Rubric/Show: ", rubric)
@@ -49,15 +49,6 @@ module.exports = (app) => {
         rubric: rubric
       }
     )
-    // rubric.getCompetencies().then(competencies => {
-    //   console.log("Here are the results from rubric.getCompetencies()", competencies.filter((n) => { return n.dataValues }))
-    //   const competenciesData = competencies.filter((n) => { return n.dataValues })
-    //   competencies.map((competency) => {
-    //     return competency.getScales()
-    //   })
-    //
-    // })
-
   })
   .catch((err) => {
     console.log(err);
