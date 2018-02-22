@@ -23,90 +23,114 @@ module.exports = (app) => {
   // Show a Rubric
   app.get('/rubrics/:id', (req, res) => {
     const rubricId = req.params.id
-    db.Rubric.findById(rubricId)
+    db.Rubric.findOne({
+      id: rubricId,
+      include: [
+        { model: db.Competency,
+          include: [
+            { model: db.Scale,
+              include: [
+                { model: db.Criterion,
+                  include: [
+                    { model: db.Action }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    })
     .then((rubric) => {
       console.log("Response from Rubric/Show: ", rubric)
-      rubric.getCompetencies().then(competencies => {
-        console.log("Here are the results from rubric.getCompetencies()", competencies[0].dataValues)
-      })
       res.status(200)
-      res.json({
+      res.send({
         message: "Rubric request successful",
-        rubric
-      })
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400);
-      res.json({
-        message: "Error!",
-        error: err
-      })
-    })
-  });
+        rubric: rubric
+      }
+    )
+    // rubric.getCompetencies().then(competencies => {
+    //   console.log("Here are the results from rubric.getCompetencies()", competencies.filter((n) => { return n.dataValues }))
+    //   const competenciesData = competencies.filter((n) => { return n.dataValues })
+    //   competencies.map((competency) => {
+    //     return competency.getScales()
+    //   })
+    //
+    // })
 
-    // UPDATE
-  app.put('/rubrics/:id/update', (req, res) => {
-    const rubricId = req.params.id
-    const rubric = req.body
-    db.Rubric.update(rubric, {
-      where: { id: rubricId }
-    }).then((response) => {
-        res.status(200)
-        res.json({
-          msg: 'Rubric updated successfully!',
-        })
-      }).catch((err) => {
-        console.log(err);
-        res.status(400);
-        res.json({
-          message: "Error!",
-          error: err
-        })
-      })
-    });
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(400);
+    res.json({
+      message: "Error!",
+      error: err
+    })
+  })
+});
 
-  // Create a Rubric
-  app.post('/users/:userId/rubrics/create', (req, res) => {
-    const newRubric = {...req.body, userId: req.params.userId}
-    db.Rubric.create(newRubric)
-    .then((rubric) => {
-      console.log("Response from Rubric/Create: ", rubric)
-      res.status(200)
-      res.json({
-        msg: 'Rubric added successfully!',
-        rubric
-      })
+// UPDATE
+app.put('/rubrics/:id/update', (req, res) => {
+  const rubricId = req.params.id
+  const rubric = req.body
+  db.Rubric.update(rubric, {
+    where: { id: rubricId }
+  }).then((response) => {
+    res.status(200)
+    res.json({
+      msg: 'Rubric updated successfully!',
     })
-    .catch((err) => {
-      console.log(err);
-      res.status(400);
-      res.json({
-        message: "Error!",
-        error: err
-      })
+  }).catch((err) => {
+    console.log(err);
+    res.status(400);
+    res.json({
+      message: "Error!",
+      error: err
     })
-  });
+  })
+});
 
-  // Delete a Rubric
-  app.delete('/rubrics/:id/delete', (req, res) => {
-    const rubricId = req.params.id
-    db.Rubric.destroy({ where: { id: rubricId } })
-    .then((response) => {
-      console.log("Response from Rubric/Delete: ", response)
-      res.status(200)
-      res.json({
-        msg: 'Rubric deleted successfully!',
-        qty: response
-      })
+// Create a Rubric
+app.post('/users/:userId/rubrics/create', (req, res) => {
+  const newRubric = {...req.body, userId: req.params.userId}
+  db.Rubric.create(newRubric)
+  .then((rubric) => {
+    console.log("Response from Rubric/Create: ", rubric)
+    res.status(200)
+    res.json({
+      msg: 'Rubric added successfully!',
+      rubric
     })
-    .catch((err) => {
-      console.log(err);
-      res.status(400);
-      res.json({
-        message: "Error!",
-        error: err
-      })
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(400);
+    res.json({
+      message: "Error!",
+      error: err
     })
-  });
+  })
+});
+
+// Delete a Rubric
+app.delete('/rubrics/:id/delete', (req, res) => {
+  const rubricId = req.params.id
+  db.Rubric.destroy({ where: { id: rubricId } })
+  .then((response) => {
+    console.log("Response from Rubric/Delete: ", response)
+    res.status(200)
+    res.json({
+      msg: 'Rubric deleted successfully!',
+      qty: response
+    })
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(400);
+    res.json({
+      message: "Error!",
+      error: err
+    })
+  })
+});
 }
