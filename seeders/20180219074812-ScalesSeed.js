@@ -46,6 +46,34 @@ module.exports = {
               { name: "JWT Authentication",  competencyId: 10003, createdAt: new Date(), updatedAt: new Date(), id: 10036 },
               { name: "Connectivity to Smart Devices",  competencyId: 10003, createdAt: new Date(), updatedAt: new Date(), id: 10037 },
 
+              { name: "Local Dev Server",  competencyId: 10004, createdAt: new Date(), updatedAt: new Date(), id: 10038 },
+              { name: "Live Remote Server",  competencyId: 10004, createdAt: new Date(), updatedAt: new Date(), id: 10039 },
+              { name: "Encrypts Passwords",  competencyId: 10004, createdAt: new Date(), updatedAt: new Date(), id: 10040 },
+              { name: "Used Server Plugins",  competencyId: 10004, createdAt: new Date(), updatedAt: new Date(), id: 10041 },
+              { name: "Dot-Env",  competencyId: 10004, createdAt: new Date(), updatedAt: new Date(), id: 10042 },
+              { name: "Analytics Implementation",  competencyId: 10004, createdAt: new Date(), updatedAt: new Date(), id: 10043 },
+              { name: "Remote Hosts",  competencyId: 10004, createdAt: new Date(), updatedAt: new Date(), id: 10044 },
+              { name: "Data Leaks",  competencyId: 10004, createdAt: new Date(), updatedAt: new Date(), id: 10045 },
+              { name: "Continuous Integration",  competencyId: 10004, createdAt: new Date(), updatedAt: new Date(), id: 10046 },
+              { name: "Containers",  competencyId: 10004, createdAt: new Date(), updatedAt: new Date(), id: 10047 },
+              { name: "Classic Attack Protection",  competencyId: 10004, createdAt: new Date(), updatedAt: new Date(), id: 10048 },
+              { name: "EC2 On Load Balanced Server",  competencyId: 10004, createdAt: new Date(), updatedAt: new Date(), id: 10049 },
+              { name: "Advanced Statistical Analysis",  competencyId: 10004, createdAt: new Date(), updatedAt: new Date(), id: 10050 },
+
+              { name: "Integrated Routes Tests",  competencyId: 10005, createdAt: new Date(), updatedAt: new Date(), id: 10051 },
+              { name: "Unit Model Tests",  competencyId: 10005, createdAt: new Date(), updatedAt: new Date(), id: 10052 },
+              { name: "Test Coverage",  competencyId: 10005, createdAt: new Date(), updatedAt: new Date(), id: 10053 },
+              { name: "Testing Libraries",  competencyId: 10005, createdAt: new Date(), updatedAt: new Date(), id: 10054 },
+              { name: "Testing Auth Routes",  competencyId: 10005, createdAt: new Date(), updatedAt: new Date(), id: 10055 },
+              { name: "Test Driven Development",  competencyId: 10005, createdAt: new Date(), updatedAt: new Date(), id: 10056 },
+              { name: "Uncomfortable Without Tests",  competencyId: 10005, createdAt: new Date(), updatedAt: new Date(), id: 10057 },
+
+              { name: "Proficiency",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10058 },
+              { name: "One-to-Many",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10059 },
+              { name: "ORM/ODM Commands",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10060 },
+              { name: "Many-to-Many",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10061 },
+              { name: "Backups and DB Transfer",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10062 },
+
           ], {});
 
     /*

@@ -62,7 +62,6 @@ require('./controllers/users-controller.js')(app);
 require('./controllers/competencies-controller.js')(app);
 require('./controllers/scales-controller.js')(app);
 require('./controllers/criteria-controller.js')(app);
-require('./controllers/actions-controller.js')(app);
 
 app.get('/', function(req, res) {
   console.log('GET index');
