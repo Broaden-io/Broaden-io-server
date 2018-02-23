@@ -11,24 +11,6 @@ const acceptOverride = require('connect-acceptoverride');
 var cors = require('cors')
 const db = require("./models");
 
-//**** ALLOW CORS ****//
-// var allowCrossDomain = function(req, res, next) {
-//   res.header('Access-Control-Allow-Origin', "*");
-//   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-//   res.header('Access-Control-Allow-Headers', 'Content-Type');
-//   next();
-// }
-// var whitelist = ['http://localhost:3000', 'https://localhost:3000']
-// var corsOptions = {
-//   origin: function (origin, callback) {
-//     if (whitelist.indexOf(origin) !== -1) {
-//       callback(null, true)
-//     } else {
-//       callback(new Error('Not allowed by CORS'))
-//     }
-//   }
-// }
-
 //**** MIDDLEWARE ****//
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -39,8 +21,8 @@ app.use(cors())
 
 // Auth Middleware
 var checkAuth = function (req, res, next) {
-  console.log('cookies')
-  console.log(req.cookie)
+
+  req.header.auth
 
   if (typeof req.cookies.RubricsApp === 'undefined' || req.cookies.RubricsApp === null) {
     req.user = null;
