@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Sign Up",
+			"name": "User CREATE (Sign Up)",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -72,7 +72,7 @@
 			},
 			"response": [
 				{
-					"id": "4095f7c3-d1cd-43af-8ab1-d7617363dd2e",
+					"id": "f2a30624-11eb-415d-b048-a5884ffbeb4d",
 					"name": "Default",
 					"originalRequest": {
 						"method": "POST",
@@ -95,10 +95,8 @@
 					},
 					"code": 200,
 					"_postman_previewlanguage": "Text",
-					"_postman_previewtype": "parsed",
 					"header": [],
 					"cookie": [],
-					"responseTime": 0,
 					"body": ""
 				}
 			]
@@ -143,7 +141,7 @@
 			},
 			"response": [
 				{
-					"id": "c8e20edf-7485-42af-9489-9041955a8ab7",
+					"id": "f3ede03f-1526-40af-8103-d29d76405558",
 					"name": "Default",
 					"originalRequest": {
 						"method": "POST",
@@ -166,10 +164,8 @@
 					},
 					"code": 200,
 					"_postman_previewlanguage": "Text",
-					"_postman_previewtype": "parsed",
 					"header": [],
 					"cookie": [],
-					"responseTime": 0,
 					"body": ""
 				}
 			]
@@ -198,7 +194,7 @@
 			},
 			"response": [
 				{
-					"id": "d0af6465-0328-4b03-9c9e-ff610f17887c",
+					"id": "3941bad7-a05c-4c40-b3e5-ef96a9e641b8",
 					"name": "Default",
 					"originalRequest": {
 						"method": "GET",
@@ -221,16 +217,14 @@
 					},
 					"code": 200,
 					"_postman_previewlanguage": "Text",
-					"_postman_previewtype": "parsed",
 					"header": [],
 					"cookie": [],
-					"responseTime": 0,
 					"body": ""
 				}
 			]
 		},
 		{
-			"name": "User Show",
+			"name": "User SHOW",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -255,7 +249,7 @@
 			"response": []
 		},
 		{
-			"name": "Get Profile",
+			"name": "Profile SHOW",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -334,14 +328,14 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:8000/rubrics/1",
+					"raw": "localhost:8000/rubrics/10000",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
 						"rubrics",
-						"1"
+						"10000"
 					]
 				},
 				"description": "Displays a single rubric's data including all nested resources"
@@ -349,7 +343,7 @@
 			"response": []
 		},
 		{
-			"name": "Create Scale",
+			"name": "Scale CREATE",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -392,19 +386,17 @@
 						"scales",
 						"create"
 					]
-				}
+				},
+				"description": null
 			},
 			"response": []
 		},
 		{
-			"name": "Show Scale",
+			"name": "Scale SHOW",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"url": {
 					"raw": "localhost:8000/scales/1",
 					"host": [
@@ -421,7 +413,7 @@
 			"response": []
 		},
 		{
-			"name": "Delete Scale",
+			"name": "Scale DELETE",
 			"request": {
 				"method": "DELETE",
 				"header": [
@@ -463,19 +455,17 @@
 						"1",
 						"delete"
 					]
-				}
+				},
+				"description": null
 			},
 			"response": []
 		},
 		{
-			"name": "Show Criteria",
+			"name": "Criteria SHOW",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"url": {
 					"raw": "localhost:8000/criteria/1",
 					"host": [
@@ -492,7 +482,7 @@
 			"response": []
 		},
 		{
-			"name": "Create Criterion",
+			"name": "Criteria CREATE",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -534,11 +524,12 @@
 						"criteria",
 						"create"
 					]
-				}
+				},
+				"description": null
 			},
 			"response": [
 				{
-					"id": "40d74e98-84b9-4792-ab02-444594fd7899",
+					"id": "a87fd38b-bbbf-4638-bc26-f3fc4b4d36e5",
 					"name": "create Criteria",
 					"originalRequest": {
 						"method": "POST",
@@ -587,7 +578,6 @@
 					"status": "Not Found",
 					"code": 404,
 					"_postman_previewlanguage": "html",
-					"_postman_previewtype": "text",
 					"header": [
 						{
 							"key": "Access-Control-Allow-Origin",
@@ -639,13 +629,12 @@
 						}
 					],
 					"cookie": [],
-					"responseTime": 38,
 					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot POST /scales/5/criterion/create</pre>\n</body>\n</html>\n"
 				}
 			]
 		},
 		{
-			"name": "Delete Criteria",
+			"name": "Criteria DELETE",
 			"request": {
 				"method": "DELETE",
 				"header": [
@@ -687,12 +676,13 @@
 						"3",
 						"delete"
 					]
-				}
+				},
+				"description": null
 			},
 			"response": []
 		},
 		{
-			"name": "Update/Edit Criteria",
+			"name": "Criteria UPDATE",
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -733,12 +723,13 @@
 						"criteria",
 						"3"
 					]
-				}
+				},
+				"description": null
 			},
 			"response": []
 		},
 		{
-			"name": "Create Competency",
+			"name": "Competency CREATE",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -782,7 +773,7 @@
 			"response": []
 		},
 		{
-			"name": "Delete Competency",
+			"name": "Competency DELETE",
 			"request": {
 				"method": "DELETE",
 				"header": [

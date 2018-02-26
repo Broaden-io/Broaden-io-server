@@ -80,8 +80,17 @@ module.exports = function(app) {
         res.json({
           message: "Successfully logged in!",
           isLoggedIn: true,
-          userId: user.id,
-          token: token
+          user: {
+            id: user.id,
+            username: user.username,
+            email: user.email,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            bio: user.bio,
+            avatarURL: user.avatarURL
+          },
+          token: token,
+
         })
         next();
       });
