@@ -47,11 +47,10 @@ module.exports = (app) => {
     });
 
   // Create a Assessment
-  app.post('/rubrics/:rubricId/assessments/create', (req, res) => {
-    const newAssessment = {...req.body, rubricId: req.params.rubricId}
+  app.post('/users/:userId/rubrics/:rubricId/assessments/create', (req, res) => {
+    const newAssessment = {...req.body, userId: req.params.userId, rubricId: req.params.rubricId}
     db.Assessment.create(newAssessment)
     .then((assessment) => {
-      console.log("Response from Assessment/Create: ", assessment)
       res.status(200)
       res.json({
         msg: 'assessment added successfully!',
@@ -68,7 +67,6 @@ module.exports = (app) => {
     })
   });
 
-  //TODO: Code Review  whether the assessmentId exists, it does not ever hits catch error
   // Delete a Assessment
   app.delete('/assessments/:id/delete', (req, res) => {
     const assessmentId = req.params.id
