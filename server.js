@@ -13,6 +13,7 @@ const db = require("./models");
 
 //**** MIDDLEWARE ****//
 app.use(express.static('public'))
+app.use(bodyParser({limit: '50mb'}))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -21,14 +22,12 @@ app.use(cors())
 
 // Auth Middleware
 var checkAuth = function (req, res, next) {
+  const auth = req.header('Authorization')
 
-  req.header.auth
-
-  if (typeof req.cookies.RubricsApp === 'undefined' || req.cookies.RubricsApp === null) {
+  if (typeof auth === 'undefined' || auth === null) {
     req.user = null;
-    console.log("null user in checkAuth")
   } else {
-    const token = req.cookies.RubricsApp;
+    const token = auth.slice(7);
     const decodedToken = jwt.decode(token, { complete: true }) || {};
     req.user = decodedToken.payload;
   }
@@ -44,14 +43,9 @@ require('./controllers/users-controller.js')(app);
 require('./controllers/competencies-controller.js')(app);
 require('./controllers/scales-controller.js')(app);
 require('./controllers/criteria-controller.js')(app);
+require('./controllers/assessments-controller.js')(app);
 
 app.get('/', function(req, res) {
-  console.log('GET index');
-  //   bcrypt.hash("Fake123", 10).then(function(hash) {
-  //     // Store hash in your password DB.
-  //     console.log('Sample PW Hash is:', hash)
-  // });
-
   res.send('Rubrics App backend up and running!');
 });
 

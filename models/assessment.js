@@ -11,10 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Assessment.associate = function(models) {
-    // Scale has many Criteria
-    models.Assessment.hasMany(models.Answer, {
-      foreignKey: 'assessmentId'
-    });
+    
   };
 
   return Assessment;
