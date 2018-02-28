@@ -8,11 +8,19 @@ module.exports = (app) => {
     db.Assessment.findById(assessmentId)
     .then((assessment) => {
       console.log("Response from Assessment/Show: ", assessment)
-      res.status(200)
-      res.json({
-        message: "Assessment request successful",
-        assessment
-      })
+      if (assessment === null) {
+        res.status(400);
+        res.json({
+          message: "Asssement not found!",
+          assessmentId
+        })
+      } else {
+        res.status(200)
+        res.json({
+          message: "Assessment request successful",
+          assessment
+        })
+      }
     })
     .catch((err) => {
       console.log(err);
@@ -24,9 +32,8 @@ module.exports = (app) => {
     })
   });
 
-  //TODO: Code Review  whether the assessmentId exists, it does not ever hits catch error
     // UPDATE a Assessment
-  app.put('/assessments/:id/update', (req, res) => {
+  app.put('/assessments/:id', (req, res) => {
     const assessmentId = req.params.id
     const assessment = req.body
     db.Assessment.update(assessment, {
@@ -35,6 +42,7 @@ module.exports = (app) => {
         res.status(200)
         res.json({
           msg: 'assessment updated successfully!',
+          assessmentId,
         })
       }).catch((err) => {
         console.log(err);
@@ -68,7 +76,7 @@ module.exports = (app) => {
   });
 
   // Delete a Assessment
-  app.delete('/assessments/:id/delete', (req, res) => {
+  app.delete('/assessments/:id', (req, res) => {
     const assessmentId = req.params.id
     db.Assessment.destroy({ where: { id: assessmentId } })
     .then((response) => {
