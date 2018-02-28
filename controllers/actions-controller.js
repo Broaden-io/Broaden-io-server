@@ -68,7 +68,7 @@ module.exports = (app) => {
   });
 
   // Delete a Action
-  app.delete('/actions/:id/delete', (req, res) => {
+  app.delete('/actions/:id', (req, res) => {
     const actionId = req.params.id
     db.Action.destroy({ where: { id: actionId } })
     .then((response) => {

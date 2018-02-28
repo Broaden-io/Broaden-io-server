@@ -70,7 +70,7 @@ module.exports = (app) => {
 
   //TODO: Code Review  whether the scaleId exists, it does not ever hits catch error
   // Delete a scale
-  app.delete('/scales/:id/delete', (req, res) => {
+  app.delete('/scales/:id', (req, res) => {
     const scaleId = req.params.id
     db.Scale.destroy({ where: { id: scaleId } })
     .then((response) => {

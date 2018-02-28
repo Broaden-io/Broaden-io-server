@@ -71,7 +71,7 @@ module.exports = (app) => {
 
   //TODO: Code Review  whether the criterionId exists, it does not ever hits catch error
   // Delete a Criterion
-  app.delete('/criteria/:id/delete', (req, res) => {
+  app.delete('/criteria/:id', (req, res) => {
     const criterionId = req.params.id
     db.Criterion.destroy({ where: { id: criterionId } })
     .then((response) => {
