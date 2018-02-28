@@ -15,7 +15,7 @@ module.exports = (app) => {
       res.json( {
         message: "Error!",
         error: err
-      }) 
+      })
     })
   });
 
@@ -104,7 +104,7 @@ app.post('/users/:userId/rubrics/create', (req, res) => {
 });
 
 // Delete a Rubric
-app.delete('/rubrics/:id/delete', (req, res) => {
+app.delete('/rubrics/:id', (req, res) => {
   const rubricId = req.params.id
   db.Rubric.destroy({ where: { id: rubricId } })
   .then((response) => {

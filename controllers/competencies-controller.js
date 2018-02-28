@@ -67,10 +67,10 @@ module.exports = (app) => {
       })
     })
   });
-  
+
   //TODO: Code Review  whether the competencyId exists, it does not ever hits catch error
   // Delete a Competency
-  app.delete('/competencies/:id/delete', (req, res) => {
+  app.delete('/competencies/:id', (req, res) => {
     const competencyId = req.params.id
     db.Competency.destroy({ where: { id: competencyId } })
     .then((response) => {
