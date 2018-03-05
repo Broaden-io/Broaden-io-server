@@ -20,7 +20,9 @@ app.use(cookieParser());
 app.use(acceptOverride())
 app.use(cors())
 
-// Auth Middleware
+
+
+//**** AUTH MIDDLEWARE ****//
 var checkAuth = function (req, res, next) {
   const auth = req.header('Authorization')
 

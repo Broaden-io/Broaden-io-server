@@ -2,6 +2,47 @@ const db = require('../models');
 
 module.exports = (app) => {
 
+  // Create a Assessment
+  app.post('/users/:userId/rubrics/:rubricId/assessments/create', (req, res) => {
+    const params = { userId: req.params.userId, rubricId: req.params.rubricId }
+    db.Assessment.findOrCreate({ where: params, defaults: {...req.body, ...params} })
+    .spread((assessment, created) => {
+
+      console.log("New Assessment Created? ", created)
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400);
+      res.json({
+        message: "Error!",
+        error: err
+      })
+    })
+
+    // db.Assessment.findOrCreate({ where: params, defaults: req.body })
+    // .all().then((assessment, created) => {
+    //   callback && callback(null, assessment, created);
+    // },
+    // (error) => {
+    //   callback && callback(error);
+    // });
+    //
+    // const callback = (error, result, created) => {
+    //   if (error) {
+    //     console.log("Error in Assessment Create Route:", error);
+    //     res.send(400, { message: "Error!", error })
+    //   } else {
+    //     console.log("New Assessment Created? ", created)
+    //     res.send({
+    //       message: (created ? "Assessment was successfully created" : "Assessment was successfully found"),
+    //       created,
+    //       result
+    //     })
+    //   }
+    // };
+  });
+
+
   // Show Assessment
   app.get('/assessments/:id', (req, res) => {
     const assessmentId = req.params.id
@@ -32,40 +73,19 @@ module.exports = (app) => {
     })
   });
 
-    // UPDATE a Assessment
+  // UPDATE a Assessment
   app.put('/assessments/:id', (req, res) => {
     const assessmentId = req.params.id
     const assessment = req.body
     db.Assessment.update(assessment, {
       where: { id: assessmentId }
     }).then((response) => {
-        res.status(200)
-        res.json({
-          msg: 'assessment updated successfully!',
-          assessmentId,
-        })
-      }).catch((err) => {
-        console.log(err);
-        res.status(400);
-        res.json({
-          message: "Error!",
-          error: err
-        })
-      })
-    });
-
-  // Create a Assessment
-  app.post('/users/:userId/rubrics/:rubricId/assessments/create', (req, res) => {
-    const newAssessment = {...req.body, userId: req.params.userId, rubricId: req.params.rubricId}
-    db.Assessment.create(newAssessment)
-    .then((assessment) => {
       res.status(200)
       res.json({
-        msg: 'assessment added successfully!',
-        assessment
+        msg: 'assessment updated successfully!',
+        assessmentId,
       })
-    })
-    .catch((err) => {
+    }).catch((err) => {
       console.log(err);
       res.status(400);
       res.json({
