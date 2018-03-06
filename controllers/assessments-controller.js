@@ -4,7 +4,7 @@ var Assessment = db.Assessment
 module.exports = (app) => {
 
   // Show or Create a Assessment
-  app.get('/users/:userId/rubrics/:rubricId/assessments/create', (req, res) => {
+  app.get('/users/:userId/rubrics/:rubricId/assessments/', (req, res) => {
     const params = { userId: req.params.userId, rubricId: req.params.rubricId }
     db.Rubric.findOne({
       where: {
