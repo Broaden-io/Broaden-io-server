@@ -5,6 +5,15 @@ module.exports = (app) => {
   // Create a Assessment
   app.post('/users/:userId/rubrics/:rubricId/assessments/create', (req, res) => {
     const params = { userId: req.params.userId, rubricId: req.params.rubricId }
+    db.Assessment.findOne({ where: params }).then(assessment => {
+      if (!!project) {
+        // Return the assessment
+
+      } else {
+        // Create the assessment and return it...
+      }
+    })
+
     db.Assessment.findOrCreate({ where: params, defaults: {...req.body, ...params} })
     .spread((assessment, created) => {
 

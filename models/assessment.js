@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Assessment.associate = function(models) {
-    
+
   };
 
   return Assessment;
