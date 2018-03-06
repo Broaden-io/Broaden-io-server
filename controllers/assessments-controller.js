@@ -1,14 +1,49 @@
 const db = require('../models');
+var Assessment = db.Assessment
 
 module.exports = (app) => {
 
-  // Create a Assessment
-  app.post('/users/:userId/rubrics/:rubricId/assessments/create', (req, res) => {
+  // Show or Create a Assessment
+  app.get('/users/:userId/rubrics/:rubricId/assessments/create', (req, res) => {
     const params = { userId: req.params.userId, rubricId: req.params.rubricId }
-    db.Assessment.findOrCreate({ where: params, defaults: {...req.body, ...params} })
+    db.Rubric.findOne({
+      where: {
+        id: req.params.rubricId
+      },
+      include: [{
+        model: db.Competency,
+        include: [{
+          model: db.Scale,
+          include: [{
+            model: db.Criterion,
+            include: [{
+              model: db.Action,
+            }],
+            order: [ [ { model: db.Action }, 'id', 'ASC' ] ]
+          }],
+          order: [ [ { model: db.Criterion }, 'id', 'ASC' ] ]
+        }],
+        order: [ [ { model: db.Scale }, 'id', 'ASC' ] ]
+      }],
+      order: [ [ { model: db.Competency }, 'id', 'ASC' ] ]
+    })
+    .then((rubric) => {
+      console.log("Rubric: ", rubric.name)
+      const assessment = {
+        userId: req.params.userId,
+        rubricId: req.params.rubricId,
+        rubricJSON: rubric,
+      }
+      return db.Assessment.findOrCreate({ where: params, defaults: assessment })
+    })
     .spread((assessment, created) => {
-
-      console.log("New Assessment Created? ", created)
+      const message = created ? "Assessment was successfully created" : "Assessment was successfully found"
+      console.log(message)
+      res.send({
+        message,
+        created,
+        assessment
+      })
     })
     .catch((err) => {
       console.log(err);

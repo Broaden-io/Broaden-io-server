@@ -25,3 +25,5 @@ sequelize seed:generate --name ScalesSeed
 sequelize seed:generate --name CriteriaSeed
 
 sequelize seed:generate --name ActionsSeed
+
+sequelize migration:create --name AddCriteriaBoolInitializerColumn

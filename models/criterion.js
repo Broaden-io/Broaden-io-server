@@ -15,6 +15,10 @@ module.exports = (sequelize, DataTypes) => {
         max: 4,
         isInt: true
       }
+    },
+    answer: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     }
   }, {
     classMethods: {
