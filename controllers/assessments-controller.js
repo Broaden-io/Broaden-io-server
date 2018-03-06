@@ -2,12 +2,14 @@ const db = require('../models');
 var Assessment = db.Assessment
 
 module.exports = (app) => {
-  // Create a Assessment
+
+  // Show or Create a Assessment
   app.get('/users/:userId/rubrics/:rubricId/assessments/create', (req, res) => {
     const params = { userId: req.params.userId, rubricId: req.params.rubricId }
-    var assessment = {}
     db.Rubric.findOne({
-      id: req.params.rubricId,
+      where: {
+        id: req.params.rubricId
+      },
       include: [{
         model: db.Competency,
         include: [{
@@ -27,9 +29,10 @@ module.exports = (app) => {
     })
     .then((rubric) => {
       console.log("Rubric: ", rubric.name)
-      assessment = {
-        rubricJSON: JSON.stringify(rubric),
-        ...params
+      const assessment = {
+        userId: req.params.userId,
+        rubricId: req.params.rubricId,
+        rubricJSON: rubric,
       }
       return db.Assessment.findOrCreate({ where: params, defaults: assessment })
     })

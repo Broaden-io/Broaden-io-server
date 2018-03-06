@@ -23,7 +23,9 @@ module.exports = (app) => {
   app.get('/rubrics/:id', (req, res) => {
     const rubricId = req.params.id
     db.Rubric.findOne({
-      id: rubricId,
+      where: {
+        id: rubricId
+      },
       include: [{
         model: db.Competency,
         include: [{
