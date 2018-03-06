@@ -72,7 +72,7 @@
 			},
 			"response": [
 				{
-					"id": "eafb6231-5e71-4d7b-85d1-d438f95aef3d",
+					"id": "a4598492-290a-470b-8ec5-2c9337290379",
 					"name": "Default",
 					"originalRequest": {
 						"method": "POST",
@@ -141,7 +141,7 @@
 			},
 			"response": [
 				{
-					"id": "d6915ead-82a0-4a5e-abfb-343de5d067e6",
+					"id": "bd020158-c5e9-4907-aef1-a560bd1ce819",
 					"name": "Default",
 					"originalRequest": {
 						"method": "POST",
@@ -194,7 +194,7 @@
 			},
 			"response": [
 				{
-					"id": "141c3d37-376b-49d3-ae48-2a6c460008de",
+					"id": "d086abec-f879-41ec-b06e-640d84ebda86",
 					"name": "Default",
 					"originalRequest": {
 						"method": "GET",
@@ -671,7 +671,7 @@
 			},
 			"response": [
 				{
-					"id": "1bd1137e-18f8-433b-abbc-325f720d2bd5",
+					"id": "680be296-b4c8-4c92-943d-94249230f0bf",
 					"name": "create Criteria",
 					"originalRequest": {
 						"method": "POST",
@@ -857,7 +857,7 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8000/users/10001/rubrics/10001/assessments/create",
+					"raw": "http://localhost:8000/users/10000/rubrics/10000/assessments",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -865,11 +865,10 @@
 					"port": "8000",
 					"path": [
 						"users",
-						"10001",
+						"10000",
 						"rubrics",
-						"10001",
-						"assessments",
-						"create"
+						"10000",
+						"assessments"
 					]
 				},
 				"description": "Creates a new assessment when given an userId and rubricId. "
