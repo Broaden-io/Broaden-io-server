@@ -39,7 +39,7 @@ module.exports = (app) => {
     .spread((assessment, created) => {
       const message = created ? "Assessment was successfully created" : "Assessment was successfully found"
       console.log(message)
-      res.send({
+      res.send(200, {
         message,
         created,
         assessment
