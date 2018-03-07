@@ -14,7 +14,7 @@ Backend API Server that supports the Single Page application that allows student
 - [Tassos Laumbrou](https://www.linkedin.com/in/lambrou/) - Front/Back End
 - [Alirie Gray](https://www.linkedin.com/in/alirie-gray/) - Front End/ Back End
 - [Jeff Chiu](https://www.linkedin.com/in/jeffchiu1) - Full Stack
-- [Shane Austrie] - Frontend
+- [Shane Austrie](https://www.linkedin.com/in/shaneaustrie) - Frontend
 
 For the Back-end side, we use Express, Node JS, Sequelize to handle our API server.
 
