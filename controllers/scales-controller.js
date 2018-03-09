@@ -34,7 +34,7 @@ module.exports = (app) => {
     }).then((response) => {
         res.status(200)
         res.json({
-          msg: 'scale updated successfully!',
+          message: 'scale updated successfully!',
         })
       }).catch((err) => {
         console.log(err);
@@ -54,7 +54,7 @@ module.exports = (app) => {
       console.log("Response from scale/Create: ", scale)
       res.status(200)
       res.json({
-        msg: 'scale added successfully!',
+        message: 'scale added successfully!',
         scale
       })
     })
@@ -77,7 +77,7 @@ module.exports = (app) => {
       console.log("Response from scale/Delete: ", response)
       res.status(200)
       res.json({
-        msg: 'scale deleted successfully!',
+        message: 'scale deleted successfully!',
         qty: response
       })
     })

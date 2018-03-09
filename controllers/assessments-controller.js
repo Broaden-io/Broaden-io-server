@@ -108,6 +108,37 @@ module.exports = (app) => {
     })
   });
 
+  // Index Assessments
+  app.get('/users/:userId/assessments', (req, res) => {
+    const userId = req.params.userId
+    db.Assessment.findAll({ where: { userId: userId } })
+    .then((assessments) => {
+      console.log("Response from Assessment/Index: ", assessments)
+      if (assessments === null) {
+        res.status(400);
+        res.json({
+          message: "Assessments not found for User " + userId,
+          userId
+        })
+      } else {
+        res.status(200)
+        res.json({
+          message: "Assessments request successful",
+          userId,
+          assessments
+        })
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400);
+      res.json({
+        message: "Error!",
+        error: err
+      })
+    })
+  });
+
   // UPDATE a Assessment
   app.post('/assessments/:id', (req, res) => {
     const assessmentId = req.params.id
@@ -123,7 +154,7 @@ module.exports = (app) => {
       console.log("Assesement Competencies (HTML): ", assessment.rubricJSON.Competencies[0].Scales[0].Criteria)
       res.status(200)
       res.json({
-        msg: 'assessment updated successfully!',
+        message: 'assessment updated successfully!',
         assessmentId,
         assessment
       })
@@ -145,7 +176,7 @@ module.exports = (app) => {
       console.log("Response from Assessment/Delete: ", response)
       res.status(200)
       res.json({
-        msg: 'Assessment deleted successfully!',
+        message: 'Assessment deleted successfully!',
         qty: response
       })
     })

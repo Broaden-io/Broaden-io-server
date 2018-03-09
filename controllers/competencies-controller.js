@@ -34,7 +34,7 @@ module.exports = (app) => {
     }).then((response) => {
         res.status(200)
         res.json({
-          msg: 'competency updated successfully!',
+          message: 'competency updated successfully!',
         })
       }).catch((err) => {
         console.log(err);
@@ -54,7 +54,7 @@ module.exports = (app) => {
       console.log("Response from Competency/Create: ", competency)
       res.status(200)
       res.json({
-        msg: 'competency added successfully!',
+        message: 'competency added successfully!',
         competency
       })
     })
@@ -77,7 +77,7 @@ module.exports = (app) => {
       console.log("Response from Competency/Delete: ", response)
       res.status(200)
       res.json({
-        msg: 'Competency deleted successfully!',
+        message: 'Competency deleted successfully!',
         qty: response
       })
     })
