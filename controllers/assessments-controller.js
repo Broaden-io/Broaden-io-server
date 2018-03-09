@@ -109,15 +109,18 @@ module.exports = (app) => {
   });
 
   // UPDATE a Assessment
-  app.put('/assessments/:id', (req, res) => {
+  app.post('/assessments/:id', (req, res) => {
     const assessmentId = req.params.id
     const assessment = req.body
+    console.log("req body", assessment)
+    //console.log(assessment.rubricJSON.Competencies[0].Scales[0].Criteria)
     db.Assessment.update(assessment, {
       where: { id: assessmentId }
     }).then((response) => {
       console.log(response);
       return db.Assessment.findById(assessmentId);
     }).then((assessment) => {
+      console.log("Assesement Competencies (HTML): ", assessment.rubricJSON.Competencies[0].Scales[0].Criteria)
       res.status(200)
       res.json({
         msg: 'assessment updated successfully!',
