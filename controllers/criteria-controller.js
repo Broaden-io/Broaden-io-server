@@ -34,7 +34,7 @@ module.exports = (app) => {
     }).then((response) => {
         res.status(200)
         res.json({
-          msg: 'criterion updated successfully!',
+          message: 'criterion updated successfully!',
         })
       }).catch((err) => {
         console.log(err);
@@ -55,7 +55,7 @@ module.exports = (app) => {
       console.log("Response from criteria/Create: ", criterion)
       res.status(200)
       res.json({
-        msg: 'criterion added successfully!',
+        message: 'criterion added successfully!',
         criterion
       })
     })
@@ -78,7 +78,7 @@ module.exports = (app) => {
       console.log("Response from criteria/Delete: ", response)
       res.status(200)
       res.json({
-        msg: 'criterion deleted successfully!',
+        message: 'criterion deleted successfully!',
         qty: response
       })
     })
