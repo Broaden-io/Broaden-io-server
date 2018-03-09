@@ -115,10 +115,14 @@ module.exports = (app) => {
     db.Assessment.update(assessment, {
       where: { id: assessmentId }
     }).then((response) => {
+      console.log(response);
+      return db.Assessment.findById(assessmentId);
+    }).then((assessment) => {
       res.status(200)
       res.json({
         msg: 'assessment updated successfully!',
         assessmentId,
+        assessment
       })
     }).catch((err) => {
       console.log(err);
