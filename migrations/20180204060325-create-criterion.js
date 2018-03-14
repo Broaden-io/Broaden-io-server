@@ -24,6 +24,10 @@ module.exports = {
           isInt: true
         }
       },
+      answer: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -31,6 +35,14 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      scaleId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Scales',
+          key: 'id'
+        }
       }
     });
   },

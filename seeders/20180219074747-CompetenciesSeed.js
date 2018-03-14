@@ -11,6 +11,14 @@ module.exports = {
               { name: "DevOps and Security",  rubricId: 10000, createdAt: new Date(), updatedAt: new Date(), id: 10004 },
               { name: "Testing and Debugging",  rubricId: 10000, createdAt: new Date(), updatedAt: new Date(), id: 10005 },
               { name: "Databases - SQL and NoSQL",  rubricId: 10000, createdAt: new Date(), updatedAt: new Date(), id: 10006 },
+
+              // { name: "Swift",  rubricId: 10001, createdAt: new Date(), updatedAt: new Date(), id: 10007 },
+              // { name: "XCode",  rubricId: 10001, createdAt: new Date(), updatedAt: new Date(), id: 10008 },
+              // { name: "iOS Frontend",  rubricId: 10001, createdAt: new Date(), updatedAt: new Date(), id: 10009 },
+              // { name: "Backend Skills",  rubricId: 10001, createdAt: new Date(), updatedAt: new Date(), id: 10010 },
+              // { name: "DevOps and Security",  rubricId: 10001, createdAt: new Date(), updatedAt: new Date(), id: 10011 },
+              // { name: "Testing and Debugging",  rubricId: 10001, createdAt: new Date(), updatedAt: new Date(), id: 10012 },
+              // { name: "Databases - SQL and NoSQL",  rubricId: 10001, createdAt: new Date(), updatedAt: new Date(), id: 10013 },
           ], {});
     /*
       Add altering commands here.
@@ -25,7 +33,7 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    
+
     return queryInterface.bulkDelete('Competencies', null, {});
 
     /*
