@@ -74,6 +74,26 @@ module.exports = {
               { name: "Many-to-Many",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10061 },
               { name: "Backups and DB Transfer",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10062 },
 
+              { name: "Collection and Presentation",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10063 },
+              { name: "Level of Polish",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10064 },
+              { name: "UX of Portfolio Projects",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10065 },
+              { name: "Authentication Barriers",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10066 },
+              { name: "Code Accessibility",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10067 },
+              { name: "Live users",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10068 },
+
+              { name: "Prioritization and follow-through",  competencyId: 10007, createdAt: new Date(), updatedAt: new Date(), id: 10069 },
+              { name: "Project Planning Tools",  competencyId: 10007, createdAt: new Date(), updatedAt: new Date(), id: 10070 },
+              { name: "Stepwise/Agile Development",  competencyId: 10007, createdAt: new Date(), updatedAt: new Date(), id: 10071 },
+              { name: "Scoping",  competencyId: 10007, createdAt: new Date(), updatedAt: new Date(), id: 10072 },
+              { name: "Testing Functionality Stepwise",  competencyId: 10007, createdAt: new Date(), updatedAt: new Date(), id: 10073 },
+
+
+              { name: "GitHub Commits per Week",  competencyId: 10008, createdAt: new Date(), updatedAt: new Date(), id: 10074 },
+              { name: "Number of Projects",  competencyId: 10008, createdAt: new Date(), updatedAt: new Date(), id: 10075 },
+              { name: "Finishing Projects",  competencyId: 10008, createdAt: new Date(), updatedAt: new Date(), id: 10076 },
+              { name: "Feedback",  competencyId: 10008, createdAt: new Date(), updatedAt: new Date(), id: 10077 },
+              { name: "Resources for Problem Solving",  competencyId: 10008, createdAt: new Date(), updatedAt: new Date(), id: 10077 },
+
           ], {});
 
     /*

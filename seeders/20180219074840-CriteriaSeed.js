@@ -112,6 +112,54 @@ module.exports = {
               { text: "Can pipe data between databases as well as create and restore backups",  level: 3, scaleId: 10062, createdAt: new Date(), updatedAt: new Date(), id: 10099 },
 
 
+              { text: "The portfolio is sparse and not collected in one place <3 live, polished projects.",  level: 1, scaleId: 10063, createdAt: new Date(), updatedAt: new Date(), id: 10100 },
+              { text: "The portfolio is collected in one place, either on LinkedIn or in a portfolio site or a personal website.",  level: 2, scaleId: 10063, createdAt: new Date(), updatedAt: new Date(), id: 10101 },
+              { text: "The portfolio is presented in a unique and inviting personal website that displays a rich portfolio of  original projects.",  level: 3, scaleId: 10063, createdAt: new Date(), updatedAt: new Date(), id: 10102 },
+              { text: "There are many projects (> 5) and a few are very creative/ sophisticated.",  level: 4, scaleId: 10064, createdAt: new Date(), updatedAt: new Date(), id: 10103 },
+
+              { text: "Projects are just from tutorials.",  level: 1, scaleId: 10064, createdAt: new Date(), updatedAt: new Date(), id: 10104 },
+              { text: "Portfolio has 3 or more live and polished projects.",  level: 2, scaleId: 10064, createdAt: new Date(), updatedAt: new Date(), id: 10105 },
+
+              { text: "Many projects have authentication barriers to see how it works.",  level: 1, scaleId: 10065, createdAt: new Date(), updatedAt: new Date(), id: 10106 },
+              { text: "Projects are easy to explore (no authentication or other barriers).",  level: 2, scaleId: 10065, createdAt: new Date(), updatedAt: new Date(), id: 10107 },
+
+              { text: "Projects are unusable, commonly throw errors, and lack polish.",  level: 1, scaleId: 10066, createdAt: new Date(), updatedAt: new Date(), id: 10108 },
+              { text: "Projects do not throw exceptions and their UX makes sense.",  level: 2, scaleId: 10065, createdAt: new Date(), updatedAt: new Date(), id: 10109 },
+              { text: "Projects are navigable, and have a bit of design and uniqueness.",  level: 3, scaleId: 10065, createdAt: new Date(), updatedAt: new Date(), id: 10110 },
+
+              { text: "It is hard to view projects' code.",  level: 1, scaleId: 10067, createdAt: new Date(), updatedAt: new Date(), id: 10111 },
+              { text: "The code of projects is accessible.",  level: 2, scaleId: 10067, createdAt: new Date(), updatedAt: new Date(), id: 10112 },
+              { text: "Projects' code is available and easy to find.",  level: 3, scaleId: 10067, createdAt: new Date(), updatedAt: new Date(), id: 10113 },
+              { text: "Projects include a brief, or in depth, story about the idea genesis, design, development, pivots, technical challenges, and future plans for the project",  level: 4, scaleId: 10067, createdAt: new Date(), updatedAt: new Date(), id: 10114 },
+
+              { text: "One or more projects has live users/revenue/GitHub followers and is in active development.",  level: 3, scaleId: 10068, createdAt: new Date(), updatedAt: new Date(), id: 10115 },
+              { text: "A projects is of exception quality, e.g., 1k+ downloads, trending on Hacker News, GitHub, Product Hunt",  level: 4, scaleId: 10068, createdAt: new Date(), updatedAt: new Date(), id: 10116 },
+
+
+              { text: "Often just jumps into coding without making any plans, backlog, milestones, or sprint planning.",  level: 1, scaleId: 10069, createdAt: new Date(), updatedAt: new Date(), id: 10117 },
+              { text: "Makes a plan but doesn’t stick to it or practice good prioritization.",  level: 2, scaleId: 10069, createdAt: new Date(), updatedAt: new Date(), id: 10118 },
+              { text: "Makes a plan, sticks to it, and practices good prioritization.",  level: 3, scaleId: 10069, createdAt: new Date(), updatedAt: new Date(), id: 10119 },
+              { text: "Has a good plan, but can also deal with shifting priorities and resources without disrupting the project’s deadlines and quality.",  level: 4, scaleId: 10069, createdAt: new Date(), updatedAt: new Date(), id: 10120 },
+
+              { text: "Has very little familiarity with any project planning tool.",  level: 1, scaleId: 10070, createdAt: new Date(), updatedAt: new Date(), id: 10121 },
+              { text: "Has some familiarity with a project planning tool like Trello, Github Projects, Jira, Pivot Table, etc.",  level: 2, scaleId: 10070, createdAt: new Date(), updatedAt: new Date(), id: 10122 },
+              { text: "Has mastery of a project planning tool.",  level: 3, scaleId: 10070, createdAt: new Date(), updatedAt: new Date(), id: 10123 },
+              { text: "Has mastery of various project planning tools.",  level: 4, scaleId: 10070, createdAt: new Date(), updatedAt: new Date(), id: 10124 },
+
+              { text: "Tries to build everything at once, not stepwise or agile.",  level: 1, scaleId: 10071, createdAt: new Date(), updatedAt: new Date(), id: 10125 },
+              { text: "Can scope projects well from the beginning of the project.",  level: 2, scaleId: 10071, createdAt: new Date(), updatedAt: new Date(), id: 10126 },
+              { text: "Builds code bit-by-bit and releases in a stepwise, versioned, agile fashion.",  level: 3, scaleId: 10071, createdAt: new Date(), updatedAt: new Date(), id: 10127 },
+
+              { text: "Often over-scopes projects.",  level: 1, scaleId: 10072, createdAt: new Date(), updatedAt: new Date(), id: 10128 },
+              { text: "Rarely over-scopes projects.",  level: 2, scaleId: 10072, createdAt: new Date(), updatedAt: new Date(), id: 10129 },
+              { text: "Always scopes products and achieves them on intended timeline.",  level: 3, scaleId: 10072, createdAt: new Date(), updatedAt: new Date(), id: 10130 },
+              { text: "Scopes well and avoids scope-creep through good communication.",  level: 4, scaleId: 10072, createdAt: new Date(), updatedAt: new Date(), id: 10131 },
+
+              { text: "Codes the entire product without testing functionality.",  level: 1, scaleId: 10073, createdAt: new Date(), updatedAt: new Date(), id: 10132 },
+              { text: "Might often write large chunks of code and incidentally inject bugs and technical debt into their code.",  level: 2, scaleId: 10073, createdAt: new Date(), updatedAt: new Date(), id: 10133 },
+
+
+
           ], {});
 
     /*
