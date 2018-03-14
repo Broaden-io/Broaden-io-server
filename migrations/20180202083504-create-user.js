@@ -47,6 +47,7 @@ module.exports = {
       avatarURL: {
         type: Sequelize.STRING,
         allowNull: true,
+        defaultValue: 'assets/img/faces/default-avatar.jpg',
         validate: {
           isUrl: true
         }
