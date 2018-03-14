@@ -19,6 +19,6 @@
     "database": "rd5l7p7aekmdn98",
     "host": "ec2-54-163-236-188.compute-1.amazonaws.com",
     "dialect": "postgres",
-    "use_env_variable": "DATABASE_URL"
+    "use_env_variable": "HEROKU_POSTGRESQL_BLACK_URL"
   }
 }
