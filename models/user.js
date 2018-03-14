@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
     avatarURL: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: 'assets/img/faces/default-avatar.jpg',
+      defaultValue: 'http://www.zimphysio.org.zw/wp-content/uploads/2018/01/default-avatar-2-300x300.jpg',
       validate: {
         isUrl: true
       }
