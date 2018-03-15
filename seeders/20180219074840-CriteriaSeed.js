@@ -136,6 +136,7 @@ module.exports = {
               { text: "A projects is of exception quality, e.g., 1k+ downloads, trending on Hacker News, GitHub, Product Hunt",  level: 4, scaleId: 10068, createdAt: new Date(), updatedAt: new Date(), id: 10116 },
 
 
+
               { text: "Often just jumps into coding without making any plans, backlog, milestones, or sprint planning.",  level: 1, scaleId: 10069, createdAt: new Date(), updatedAt: new Date(), id: 10117 },
               { text: "Makes a plan but doesn’t stick to it or practice good prioritization.",  level: 2, scaleId: 10069, createdAt: new Date(), updatedAt: new Date(), id: 10118 },
               { text: "Makes a plan, sticks to it, and practices good prioritization.",  level: 3, scaleId: 10069, createdAt: new Date(), updatedAt: new Date(), id: 10119 },
@@ -157,6 +158,68 @@ module.exports = {
 
               { text: "Codes the entire product without testing functionality.",  level: 1, scaleId: 10073, createdAt: new Date(), updatedAt: new Date(), id: 10132 },
               { text: "Might often write large chunks of code and incidentally inject bugs and technical debt into their code.",  level: 2, scaleId: 10073, createdAt: new Date(), updatedAt: new Date(), id: 10133 },
+
+
+
+              { text: "Committing to github <8 times per week, <4 days per week.",  level: 1, scaleId: 10074, createdAt: new Date(), updatedAt: new Date(), id: 10134 },
+              { text: "Committing to github >8 times per week, at least 4 days per week.",  level: 2, scaleId: 10074, createdAt: new Date(), updatedAt: new Date(), id: 10135 },
+              { text: "Committing to github >12 times a week, 4-5 days per week.",  level: 3, scaleId: 10074, createdAt: new Date(), updatedAt: new Date(), id: 10136 },
+              { text: "Pushing to github >20 times a week, and 5-6 days a week.",  level: 4, scaleId: 10074, createdAt: new Date(), updatedAt: new Date(), id: 10137 },
+
+              { text: "Works on too many projects, or too few projects.",  level: 1, scaleId: 10075, createdAt: new Date(), updatedAt: new Date(), id: 10138 },
+              { text: "Works on a good # of projects.",  level: 2, scaleId: 10075, createdAt: new Date(), updatedAt: new Date(), id: 10139 },
+
+              { text: "Has trouble starting and/or completing projects.",  level: 1, scaleId: 10076, createdAt: new Date(), updatedAt: new Date(), id: 10140 },
+              { text: "Has trouble finishing projects.",  level: 2, scaleId: 10076, createdAt: new Date(), updatedAt: new Date(), id: 10141 },
+              { text: "Starts & finishes 80% of projects.",  level: 3, scaleId: 10076, createdAt: new Date(), updatedAt: new Date(), id: 10142 },
+
+              { text: "All requests are actionable.",  level: 2, scaleId: 10077, createdAt: new Date(), updatedAt: new Date(), id: 10143 },
+              { text: "Is a feedback Allstar: comes with a specific question, problem, solutions tried.",  level: 3, scaleId: 10077, createdAt: new Date(), updatedAt: new Date(), id: 10144 },
+
+              { text: "Uses stackoverflow and other problem solving tools.",  level: 2, scaleId: 10078, createdAt: new Date(), updatedAt: new Date(), id: 10145 },
+              { text: "Can use resources  to tactfully unblock themselves from any situation.",  level: 4, scaleId: 10078, createdAt: new Date(), updatedAt: new Date(), id: 10146 },
+
+              { text: "Code naming of variables, files, resources, and functions are awkward and not semantic.",  level: 1, scaleId: 10079, createdAt: new Date(), updatedAt: new Date(), id: 10147 },
+              { text: "Code naming is relatively natural and semantic.",  level: 2, scaleId: 10079, createdAt: new Date(), updatedAt: new Date(), id: 10148 },
+              { text: "Variable names are natural and semantic and follow conventions.",  level: 3, scaleId: 10079, createdAt: new Date(), updatedAt: new Date(), id: 10149 },
+              { text: "Can detect and follow the conventions of each code base.",  level: 4, scaleId: 10079, createdAt: new Date(), updatedAt: new Date(), id: 10150 },
+
+              { text: "Indentation and spacing are often not correct or inconsistent.",  level: 1, scaleId: 10080, createdAt: new Date(), updatedAt: new Date(), id: 10151 },
+              { text: "Indentation and spacing are correct and consistent.",  level: 2, scaleId: 10080, createdAt: new Date(), updatedAt: new Date(), id: 10152 },
+
+              { text: "Code has comments to make the code easily readable.",  level: 3, scaleId: 10081, createdAt: new Date(), updatedAt: new Date(), id: 10153 },
+
+              { text: "No projects contain any tests.",  level: 1, scaleId: 10082, createdAt: new Date(), updatedAt: new Date(), id: 10154 },
+              { text: "Major projects have some test coverage.",  level: 2, scaleId: 10082, createdAt: new Date(), updatedAt: new Date(), id: 10155 },
+              { text: "Major projects have 60% test coverage.",  level: 3, scaleId: 10082, createdAt: new Date(), updatedAt: new Date(), id: 10156 },
+              { text: "Major projects have 80% test coverage.",  level: 4, scaleId: 10082, createdAt: new Date(), updatedAt: new Date(), id: 10157 },
+
+              { text: "Can use TDD on command.",  level: 4, scaleId: 10083, createdAt: new Date(), updatedAt: new Date(), id: 10158 },
+
+
+              { text: "Does not feel comfortable writing in and explaining Object Oriented Programming.",  level: 1, scaleId: 10084, createdAt: new Date(), updatedAt: new Date(), id: 10159 },
+              { text: "Can write and explain OOP.",  level: 2, scaleId: 10084, createdAt: new Date(), updatedAt: new Date(), id: 10160 },
+              { text: "Has used OOP to write custom modules or code in a live project.",  level: 3, scaleId: 10084, createdAt: new Date(), updatedAt: new Date(), id: 10161 },
+              { text: "Has merged with already existing code bases.",  level: 4, scaleId: 10084, createdAt: new Date(), updatedAt: new Date(), id: 10162 },
+
+              { text: "Cannot explain the MVC pattern.",  level: 1, scaleId: 10085, createdAt: new Date(), updatedAt: new Date(), id: 10163 },
+              { text: "Is familiar with the MVC pattern of web and mobile development.",  level: 2, scaleId: 10085, createdAt: new Date(), updatedAt: new Date(), id: 10164 },
+              { text: "Can customize MVC architecture.",  level: 3, scaleId: 10085, createdAt: new Date(), updatedAt: new Date(), id: 10165 },
+
+              { text: "Has some familiarity with alternative architectures, e.g. MVVM, Reactive Programming, Microservices, etc.",  level: 2, scaleId: 10086, createdAt: new Date(), updatedAt: new Date(), id: 10167 },
+              { text: "Has implemented and shipped projects with multiple  alternative architectures, e.g. MVVM, Reactive Programming, Microservices, etc.",  level: 3, scaleId: 10086, createdAt: new Date(), updatedAt: new Date(), id: 10168 },
+
+              { text: "Is not familiar with major coding rules of thumb and vocabulary: Separation of Concerns, DRY code, Convention over Configuration, Modularity, Agile, RESTful, Resource, etc.",  level: 1, scaleId: 10087, createdAt: new Date(), updatedAt: new Date(), id: 10170 },
+              { text: "Is familiar with some of the basic coding vocabulary and rules of thumb.",  level: 2, scaleId: 10087, createdAt: new Date(), updatedAt: new Date(), id: 10172 },
+              { text: "Has optimized code for speed and scale through optimizing queries",  level: 4, scaleId: 10087, createdAt: new Date(), updatedAt: new Date(), id: 10173 },
+
+              { text: "",  level: 1, scaleId: 10088, createdAt: new Date(), updatedAt: new Date(), id: 10174 },
+              { text: "",  level: 2, scaleId: 10088, createdAt: new Date(), updatedAt: new Date(), id: 10175 },
+              { text: "",  level: 3, scaleId: 10088, createdAt: new Date(), updatedAt: new Date(), id: 10176 },
+              { text: "",  level: 4, scaleId: 10088, createdAt: new Date(), updatedAt: new Date(), id: 10177 },
+
+
+
 
 
 
