@@ -71,7 +71,7 @@ app.put('/rubrics/:id/update', (req, res) => {
   }).then((response) => {
     res.status(200)
     res.json({
-      msg: 'Rubric updated successfully!',
+      message: 'Rubric updated successfully!',
     })
   }).catch((err) => {
     console.log(err);
@@ -91,7 +91,7 @@ app.post('/users/:userId/rubrics/create', (req, res) => {
     console.log("Response from Rubric/Create: ", rubric)
     res.status(200)
     res.json({
-      msg: 'Rubric added successfully!',
+      message: 'Rubric added successfully!',
       rubric
     })
   })
@@ -113,7 +113,7 @@ app.delete('/rubrics/:id', (req, res) => {
     console.log("Response from Rubric/Delete: ", response)
     res.status(200)
     res.json({
-      msg: 'Rubric deleted successfully!',
+      message: 'Rubric deleted successfully!',
       qty: response
     })
   })

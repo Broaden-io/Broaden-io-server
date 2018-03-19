@@ -33,7 +33,7 @@ module.exports = (app) => {
     }).then((response) => {
         res.status(200)
         res.json({
-          msg: 'action updated successfully!',
+          message: 'action updated successfully!',
         })
       }).catch((err) => {
         console.log(err);
@@ -53,7 +53,7 @@ module.exports = (app) => {
       console.log("Response from action/Create: ", action)
       res.status(200)
       res.json({
-        msg: 'action added successfully!',
+        message: 'action added successfully!',
         action
       })
     })
@@ -75,7 +75,7 @@ module.exports = (app) => {
       console.log("Response from Action/Delete: ", response)
       res.status(200)
       res.json({
-        msg: 'action deleted successfully!',
+        message: 'action deleted successfully!',
         qty: response
       })
     })
