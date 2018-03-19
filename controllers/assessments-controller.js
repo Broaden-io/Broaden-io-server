@@ -112,9 +112,12 @@ module.exports = (app) => {
   app.put('/assessments/:id', (req, res) => {
     const assessmentId = req.params.id
     const assessment = req.body
+    console.log("**************************************THIS IS Asssement: ", assessment)
+    console.log("**************************************THIS IS Asssement TYPE: ", typeof(assessment))
     db.Assessment.update(assessment, {
       where: { id: assessmentId }
     }).then((response) => {
+      console.log("**************************************THIS IS the response:  ", response)
       res.status(200)
       res.json({
         msg: 'assessment updated successfully!',
