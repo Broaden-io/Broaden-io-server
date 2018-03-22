@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
     avatarURL: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: 'http://www.zimphysio.org.zw/wp-content/uploads/2018/01/default-avatar-2-300x300.jpg',
+      defaultValue: 'https://rubrics.herokuapp.com/assets/img/faces/default-avatar.jpg',
       validate: {
         isUrl: true
       }
