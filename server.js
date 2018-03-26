@@ -1,4 +1,3 @@
-
 //**** DEPENDENCIES ****//
 require('dotenv').config();
 const express = require('express');
@@ -20,8 +19,6 @@ app.use(cookieParser());
 app.use(acceptOverride())
 app.use(cors())
 
-
-
 //**** AUTH MIDDLEWARE ****//
 var checkAuth = function (req, res, next) {
   const auth = req.header('Authorization')
@@ -36,7 +33,6 @@ var checkAuth = function (req, res, next) {
   next();
 }
 app.use(checkAuth);
-
 
 // **** CONTROLLERS **** //
 require('./controllers/auth-controller.js')(app);
