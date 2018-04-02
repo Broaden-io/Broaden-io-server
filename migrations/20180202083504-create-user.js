@@ -47,7 +47,7 @@ module.exports = {
       avatarURL: {
         type: Sequelize.STRING,
         allowNull: true,
-        defaultValue: 'http://www.tassos.net/assets/img/faces/default-avatar.jpg',
+        defaultValue: 'https://www.tassos.net/assets/img/faces/default-avatar.jpg',
         validate: {
           isUrl: true
         }
