@@ -27,3 +27,5 @@ sequelize seed:generate --name CriteriaSeed
 sequelize seed:generate --name ActionsSeed
 
 sequelize migration:create --name AddCriteriaBoolInitializerColumn
+
+sequelize migration:create --name add-icon-name-to-rubric-model
