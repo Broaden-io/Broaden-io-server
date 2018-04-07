@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     iconName: {
       allowNull: true,
       type: DataTypes.STRING
-    }
+    },
     description: DataTypes.TEXT
   });
 
