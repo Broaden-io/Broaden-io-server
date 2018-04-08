@@ -15,7 +15,7 @@ module.exports = (app) => {
         include: [{
           model: db.Scale,
           include: [{
-            model: db.Criterion
+            model: db.Criterion,
           }],
         }],
       }],
@@ -84,6 +84,7 @@ module.exports = (app) => {
   // Index Assessments
   app.get('/users/:userId/assessments', (req, res) => {
     const userId = req.params.userId
+    var allAssessments = []
     db.Assessment.findAll({ where: { userId: userId } })
     .then((assessments) => {
       console.log("Response from Assessment/Index: ", assessments)
@@ -94,16 +95,46 @@ module.exports = (app) => {
           userId
         })
       } else {
-        res.status(200)
-        res.json({
-          message: "Assessments request successful",
-          userId,
-          assessments
+        console.dir("Storing the assessments:", assessments)
+        allAssessments = assessments
+        const criterionIds = []
+        assessments.forEach((assessment) => {
+          assessment.rubricJSON.Competencies.forEach((competency) => {
+            competency.Scales.forEach((scale) => {
+              scale.Criteria.forEach((criterion) => {
+                criterionIds.push(criterion.id)
+              })
+            })
+          })
         })
+        return db.Action.findAll({ where: { id: criterionIds }})
       }
+    }).then((learningActions) => {
+      console.log('Learning Actions:', learningActions)
+      allAssessments.forEach((assessment) => {
+        assessment.rubricJSON.Competencies.forEach((competency) => {
+          competency.Scales.forEach((scale) => {
+            scale.Criteria.forEach((criterion) => {
+              learningActions.forEach((action) => {
+                if (action.criterionId === criterion.id) {
+                  criterion.Actions.push(action)
+                }
+              })
+            })
+          })
+        })
+      })
+      res.status(200)
+      console.dir("Assessments found and Learning Actions Mapped")
+      console.dir(allAssessments, {colors: true})
+      res.json({
+        message: "Assessments request successful",
+        userId,
+        assessments: allAssessments
+      })
     })
     .catch((err) => {
-      console.log(err);
+      console.dir(err, {colors: true});
       res.status(400);
       res.json({
         message: "Error!",
@@ -121,10 +152,10 @@ module.exports = (app) => {
     db.Assessment.update(assessment, {
       where: { id: assessmentId }
     }).then((response) => {
-      console.log(response);
+      console.dir(response, {colors: true});
       return db.Assessment.findById(assessmentId);
     }).then((assessment) => {
-      console.log("Assesement Competencies (HTML): ", assessment.rubricJSON.Competencies[0].Scales[0].Criteria)
+      console.log("Assessment Competencies (HTML): ", assessment.rubricJSON.Competencies[0].Scales[0].Criteria)
       res.status(200)
       res.json({
         message: 'assessment updated successfully!',
