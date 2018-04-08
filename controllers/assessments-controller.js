@@ -15,10 +15,13 @@ module.exports = (app) => {
         include: [{
           model: db.Scale,
           include: [{
-            model: db.Criterion
+            model: db.Criterion,
           }],
+          order: [ [ { model: db.Criterion }, 'id', 'ASC' ] ]
         }],
+        order: [ [ { model: db.Scale }, 'id', 'ASC' ] ]
       }],
+      order: [ [ { model: db.Competency }, 'id', 'ASC' ] ]
     })
     .then((rubric) => {
       console.log("Rubric: ", rubric.name)
