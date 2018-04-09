@@ -1,10 +1,10 @@
-# Trubric-Backend
+# BROADEN.IO Backend
 
-www.trubric.io
+broaden.io
 
 ## Table of Contents
 
-# Trubric.io
+# BROADEN.IO
 
 Backend API Server that supports the Single Page application that allows students to achieve measurable feedback by giving them tools for diagnostic, self-assessment through rubrics created by educators. This is project for Make School. You can reach us at through our contact below.
 
