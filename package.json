@@ -4,6 +4,7 @@
   "description": "Rubrics Progress tracker platform for providing students with actionable and measureable progress towards leveling up their compentencies.",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,7 +29,7 @@
     "jsonwebtoken": "^8.1.1",
     "pg": "^6.4.2",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^4.32.2",
+    "sequelize": "^4.36.1",
     "sequelize-cli": "^3.2.0"
   }
 }
