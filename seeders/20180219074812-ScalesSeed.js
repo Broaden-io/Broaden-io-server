@@ -74,6 +74,48 @@ module.exports = {
               { name: "Many-to-Many",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10061 },
               { name: "Backups and DB Transfer",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10062 },
 
+
+              { name: "Timeliness",  competencyId: 10014, createdAt: new Date(), updatedAt: new Date(), id: 10063 },
+              { name: "Absenses",  competencyId: 10014, createdAt: new Date(), updatedAt: new Date(), id: 10064 },
+              { name: "Responsiveness",  competencyId: 10014, createdAt: new Date(), updatedAt: new Date(), id: 10065 },
+              { name: "Awareness",  competencyId: 10014, createdAt: new Date(), updatedAt: new Date(), id: 10066 },
+              { name: "Organization",  competencyId: 10014, createdAt: new Date(), updatedAt: new Date(), id: 10067 },
+              { name: "Responsibility",  competencyId: 10014, createdAt: new Date(), updatedAt: new Date(), id: 10068 },
+              { name: "Creditation",  competencyId: 10014, createdAt: new Date(), updatedAt: new Date(), id: 10069 },
+              { name: "Hygiene",  competencyId: 10014, createdAt: new Date(), updatedAt: new Date(), id: 10070 },
+
+              { name: "Daily Agenda",  competencyId: 10015, createdAt: new Date(), updatedAt: new Date(), id: 10071 },
+              { name: "Coding",  competencyId: 10015, createdAt: new Date(), updatedAt: new Date(), id: 10072 },
+              { name: "Prioritizes",  competencyId: 10015, createdAt: new Date(), updatedAt: new Date(), id: 10073 },
+              { name: "Scoping",  competencyId: 10015, createdAt: new Date(), updatedAt: new Date(), id: 10074 },
+              { name: "Planning",  competencyId: 10015, createdAt: new Date(), updatedAt: new Date(), id: 10075 },
+              { name: "Code Committing",  competencyId: 10015, createdAt: new Date(), updatedAt: new Date(), id: 10076 },
+
+              { name: "Deadlines",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10077 },
+              { name: "Ownership",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10078 },
+              { name: "Delegation",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10079 },
+              { name: "Seek Feedback",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10080 },
+              { name: "Voicing Opinion",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10081 },
+              { name: "Receptiveness",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10082 },
+              //Proficiency isnt supposed to be one
+              // { name: "Proficiency",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10083 },
+              //Scale Id needs to be decremented by one  from here on
+              { name: "Feedback (Code)",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10084 },
+              { name: "Gives Feedback",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10085 },
+
+              { name: "Self-Improvement",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10086 },
+              { name: "Habits",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10087 },
+              { name: "Mindset",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10088 },
+              { name: "Risk-Taking",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10089 },
+              { name: "Self-reliance",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10090 },
+              { name: "Empathy",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10091 },
+
+              { name: "Core Communication",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10092 },
+              { name: "Mannerisms",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10093 },
+              { name: "Communication Level",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10094 },
+              { name: "Public Speaking",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10095 },
+              { name: "Situational Awareness",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10096 },
+
           ], {});
 
     /*
