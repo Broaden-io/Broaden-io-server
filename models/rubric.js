@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.STRING,
     },
+    iconName: {
+      allowNull: true,
+      type: DataTypes.STRING
+    },
     description: DataTypes.TEXT
   });
 
