@@ -116,13 +116,10 @@ module.exports = (app) => {
         assessment.rubricJSON.Competencies.forEach((competency) => {
           competency.Scales.forEach((scale) => {
             scale.Criteria.forEach((criterion) => {
+              criterion.Actions = []
               learningActions.forEach((action) => {
                 if (action.criterionId === criterion.id) {
-                  if (criterion.Actions) {
                     criterion.Actions.push(action)
-                  } else {
-                    criterion.Actions = [action]
-                  }
                 }
               })
             })
