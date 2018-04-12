@@ -49,28 +49,6 @@ module.exports = (app) => {
         error: err
       })
     })
-
-    // db.Assessment.findOrCreate({ where: params, defaults: req.body })
-    // .all().then((assessment, created) => {
-    //   callback && callback(null, assessment, created);
-    // },
-    // (error) => {
-    //   callback && callback(error);
-    // });
-    //
-    // const callback = (error, result, created) => {
-    //   if (error) {
-    //     console.log("Error in Assessment Create Route:", error);
-    //     res.send(400, { message: "Error!", error })
-    //   } else {
-    //     console.log("New Assessment Created? ", created)
-    //     res.send({
-    //       message: (created ? "Assessment was successfully created" : "Assessment was successfully found"),
-    //       created,
-    //       result
-    //     })
-    //   }
-    // };
   });
 
 
@@ -138,9 +116,10 @@ module.exports = (app) => {
         assessment.rubricJSON.Competencies.forEach((competency) => {
           competency.Scales.forEach((scale) => {
             scale.Criteria.forEach((criterion) => {
+              criterion.Actions = []
               learningActions.forEach((action) => {
                 if (action.criterionId === criterion.id) {
-                  criterion.Actions.push(action)
+                    criterion.Actions.push(action)
                 }
               })
             })
