@@ -100,21 +100,21 @@ module.exports = {
               //Proficiency isnt supposed to be one
               // { name: "Proficiency",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10083 },
               //Scale Id needs to be decremented by one  from here on
-              { name: "Feedback (Code)",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10084 },
-              { name: "Gives Feedback",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10085 },
+              { name: "Feedback (Code)",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10083 },
+              { name: "Gives Feedback",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10084 },
 
-              { name: "Self-Improvement",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10086 },
-              { name: "Habits",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10087 },
-              { name: "Mindset",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10088 },
-              { name: "Risk-Taking",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10089 },
-              { name: "Self-reliance",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10090 },
-              { name: "Empathy",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10091 },
+              { name: "Self-Improvement",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10085 },
+              { name: "Habits",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10086 },
+              { name: "Mindset",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10087 },
+              { name: "Risk-Taking",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10088 },
+              { name: "Self-reliance",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10089 },
+              { name: "Empathy",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10090 },
 
-              { name: "Core Communication",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10092 },
-              { name: "Mannerisms",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10093 },
-              { name: "Communication Level",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10094 },
-              { name: "Public Speaking",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10095 },
-              { name: "Situational Awareness",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10096 },
+              { name: "Core Communication",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10091 },
+              { name: "Mannerisms",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10092 },
+              { name: "Communication Level",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10093 },
+              { name: "Public Speaking",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10094 },
+              { name: "Situational Awareness",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10095 },
 
           ], {});
 
