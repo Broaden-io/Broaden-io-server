@@ -1,5 +1,7 @@
 const db = require('../models');
 var Assessment = db.Assessment
+const ogs = require('open-graph-scraper');
+const util = require('util');
 
 module.exports = (app) => {
 
@@ -112,87 +114,118 @@ module.exports = (app) => {
       }
     }).then((learningActions) => {
       console.log('Learning Actions:', learningActions)
-      allAssessments.forEach((assessment) => {
-        assessment.rubricJSON.Competencies.forEach((competency) => {
-          competency.Scales.forEach((scale) => {
-            scale.Criteria.forEach((criterion) => {
-              criterion.Actions = []
-              learningActions.forEach((action) => {
-                if (action.criterionId === criterion.id) {
-                    criterion.Actions.push(action)
+      const resultAssessments = allAssessments.map((assessment) => {
+        const { rubricJSON } = assessment
+        return {
+          ...assessment,
+          rubricJSON: {
+            ...rubricJSON,
+            Competencies: assessment.rubricJSON.Competencies.map((competency) => {
+            return {
+              ...competency,
+              Scales: competency.Scales.map((scale) => {
+              return {
+                ...scale,
+                Criteria: scale.Criteria.map((criterion) => {
+                var Actions = []
+                if (!criterion.Actions) {
+                  criterion["Actions"] = Actions
                 }
-              })
-            })
-          })
+                var matchedAction = {}
+                learningActions.forEach((action) => {
+                  if (action.dataValues.criterionId === criterion.id) {
+                    matchedAction = action.dataValues
+                  }
+                })
+                console.log('MATCHEDACTION', matchedAction)
+                
+                // Attempt to collect the meta data
+                const options = {'url': matchedAction.url};
+                ogs(options, function (error, results) {
+                  if (error) {
+                    // console.log("There was an error with Open Graph call", results.error)
+                  }
+                    // console.log("Collected Meta Data from Open Graph:")
+                    // console.dir(results, {colors: true})
+                    matchedAction.meta = results
+                    // console.log("ACTION", action.dataValues)
+                    criterion.Actions.push(matchedAction)
+
+                  console.dir(criterion)
+                })
+                console.log('CRITERION', criterion)
+                return criterion
+              })}
+            })}
+          })}}
+        })
+        res.status(200)
+        console.log("Assessments found and Learning Actions Mapped")
+        console.dir(resultAssessments, {colors: true})
+        res.json({
+          message: "Assessments request successful",
+          userId,
+          assessments: JSON.parse(util.inspect(resultAssessments))
         })
       })
-      res.status(200)
-      console.dir("Assessments found and Learning Actions Mapped")
-      console.dir(allAssessments, {colors: true})
-      res.json({
-        message: "Assessments request successful",
-        userId,
-        assessments: allAssessments
+      .catch((err) => {
+        console.dir(err, {colors: true});
+        res.status(400);
+        res.json({
+          message: "Error!",
+          error: err
+        })
       })
-    })
-    .catch((err) => {
-      console.dir(err, {colors: true});
-      res.status(400);
-      res.json({
-        message: "Error!",
-        error: err
-      })
-    })
-  });
+    });
 
-  // UPDATE a Assessment
-  app.post('/assessments/:id', (req, res) => {
-    const assessmentId = req.params.id
-    const assessment = req.body
-    console.log("req body", assessment)
-    //console.log(assessment.rubricJSON.Competencies[0].Scales[0].Criteria)
-    db.Assessment.update(assessment, {
-      where: { id: assessmentId }
-    }).then((response) => {
-      console.dir(response, {colors: true});
-      return db.Assessment.findById(assessmentId);
-    }).then((assessment) => {
-      console.log("Assessment Competencies (HTML): ", assessment.rubricJSON.Competencies[0].Scales[0].Criteria)
-      res.status(200)
-      res.json({
-        message: 'assessment updated successfully!',
-        assessmentId,
-        assessment
+    // UPDATE a Assessment
+    app.post('/assessments/:id', (req, res) => {
+      const assessmentId = req.params.id
+      const assessment = req.body
+      console.log("req body", assessment)
+      //console.log(assessment.rubricJSON.Competencies[0].Scales[0].Criteria)
+      db.Assessment.update(assessment, {
+        where: { id: assessmentId }
+      }).then((response) => {
+        console.dir(response, {colors: true});
+        return db.Assessment.findById(assessmentId);
+      }).then((assessment) => {
+        console.log("Assessment Competencies (HTML): ", assessment.rubricJSON.Competencies[0].Scales[0].Criteria)
+        res.status(200)
+        res.json({
+          message: 'assessment updated successfully!',
+          assessmentId,
+          assessment
+        })
+      }).catch((err) => {
+        console.log(err);
+        res.status(400);
+        res.json({
+          message: "Error!",
+          error: err
+        })
       })
-    }).catch((err) => {
-      console.log(err);
-      res.status(400);
-      res.json({
-        message: "Error!",
-        error: err
-      })
-    })
-  });
+    });
 
-  // Delete a Assessment
-  app.delete('/assessments/:id', (req, res) => {
-    const assessmentId = req.params.id
-    db.Assessment.destroy({ where: { id: assessmentId } })
-    .then((response) => {
-      console.log("Response from Assessment/Delete: ", response)
-      res.status(200)
-      res.json({
-        message: 'Assessment deleted successfully!',
-        qty: response
+    // Delete a Assessment
+    app.delete('/assessments/:id', (req, res) => {
+      const assessmentId = req.params.id
+      db.Assessment.destroy({ where: { id: assessmentId } })
+      .then((response) => {
+        console.log("Response from Assessment/Delete: ", response)
+        res.status(200)
+        res.json({
+          message: 'Assessment deleted successfully!',
+          qty: response
+        })
       })
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400);
-      res.json({
-        message: "Error!",
-        error: err
+      .catch((err) => {
+        console.log(err);
+        res.status(400);
+        res.json({
+          message: "Error!",
+          error: err
+        })
       })
-    })
-  });
-}
+    });
+  }
