@@ -1,6 +1,10 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt')
 const db = require('../models')
+const multer  = require('multer')
+// const upload = multer({ dest: 'uploads/' })
+const Upload = require('s3-uploader');
+
 
 module.exports = function(app) {
 
@@ -72,11 +76,38 @@ module.exports = function(app) {
     }
   })
 
-  //UPDATE USER
+  // UPDATE USER
   app.put('/users/:userId', function(req, res) {
     console.log('PUT user:', req.params.userId);
+
+
     res.redirect('/');
   });
+  //
+  // //UPDATE USER 2
+  // app.put('/users/:userId', function(req, res) {
+  //   console.log('PUT user:', req.params.userId);
+  //   const username = req.user.username;
+  //
+  //   const actionId = req.params.id
+  //   const action = req.body
+  //   db.User.update(user, {
+  //     where: { id: userId }
+  //   }).then((response) => {
+  //       res.status(200)
+  //       res.json({
+  //         message: 'action updated successfully!',
+  //       })
+  //     }).catch((err) => {
+  //       console.log(err);
+  //       res.status(400);
+  //       res.json({
+  //         message: "Error!",
+  //         error: err
+  //       })
+  //     })
+  //   });
+
 
   //DELETE USER
   app.delete('/users/:userId', function(req, res) {
