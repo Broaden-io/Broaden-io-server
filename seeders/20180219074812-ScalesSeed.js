@@ -74,7 +74,7 @@ module.exports = {
               { name: "Many-to-Many",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10061 },
               { name: "Backups and DB Transfer",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10062 },
 
-
+              //Scale for Success
               { name: "Timeliness",  competencyId: 10014, createdAt: new Date(), updatedAt: new Date(), id: 10063 },
               { name: "Absenses",  competencyId: 10014, createdAt: new Date(), updatedAt: new Date(), id: 10064 },
               { name: "Responsiveness",  competencyId: 10014, createdAt: new Date(), updatedAt: new Date(), id: 10065 },

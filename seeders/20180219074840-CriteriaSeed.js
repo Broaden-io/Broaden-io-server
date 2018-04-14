@@ -111,7 +111,7 @@ module.exports = {
               { text: "Can make and query advanced associations (many-to-many)",  level: 2, scaleId: 10061, createdAt: new Date(), updatedAt: new Date(), id: 10098 },
               { text: "Can pipe data between databases as well as create and restore backups",  level: 3, scaleId: 10062, createdAt: new Date(), updatedAt: new Date(), id: 10099 },
 
-
+              //Success Skill started here 
               { text: "Late 1 or 2 times per week",  level: 1, scaleId: 10063, createdAt: new Date(), updatedAt: new Date(), id: 10100 },
               { text: "Almost never late late <1x/wk",  level: 2, scaleId: 10063, createdAt: new Date(), updatedAt: new Date(), id: 10101 },
               { text: "On time to all meetings",  level: 3, scaleId: 10063, createdAt: new Date(), updatedAt: new Date(), id: 10102 },
