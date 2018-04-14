@@ -42,71 +42,65 @@ module.exports = function(app) {
 
   //SHOW PROFILE
   app.get('/profile', function(req, res) {
-    if (req.user) {
-      const username = req.user.username;
-      db.User.findOne({ where: { username } }).then((userData) => {
-        const user = userData.dataValues;
-        if (!user) {
-          // User not found
-          return res.status(400).send({ message: 'Cannot get user' });
-        }
-        res.status(200);
-        res.json({
-          username: user.username,
-          email: user.email,
-          firstName: user.firstName,
-          lastName: user.lastName,
-          bio: user.bio,
-          avatarURL: user.avatarURL
-        });
-      })
-      .catch((err) => {
-        if (err) {
-          res.status(400);
-          res.json({
-            message: "Cannot get user"
-          });
-        }
-      })
-    } else {
-      res.status(401);
+    const username = req.user.username;
+    username = "jeffchiu"
+    db.User.findOne({ where: { username } }).then((userData) => {
+      const user = userData.dataValues;
+      if (!user) {
+        // User not found
+        return res.status(400).send({ message: 'Cannot get user' });
+      }
+      res.status(200);
       res.json({
-        message: "Not logged in"
-      })
-    }
+        username: user.username,
+        email: user.email,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        bio: user.bio,
+        avatarURL: user.avatarURL
+      });
+    })
+    .catch((err) => {
+      if (err) {
+        res.status(400);
+        res.json({
+          message: "Cannot get user"
+        });
+      }
+    })
   })
 
   // UPDATE USER
-  app.put('/users/:userId', function(req, res) {
-    console.log('PUT user:', req.params.userId);
-
-
-    res.redirect('/');
-  });
-  //
-  // //UPDATE USER 2
   // app.put('/users/:userId', function(req, res) {
   //   console.log('PUT user:', req.params.userId);
-  //   const username = req.user.username;
   //
-  //   const actionId = req.params.id
-  //   const action = req.body
-  //   db.User.update(user, {
-  //     where: { id: userId }
-  //   }).then((response) => {
-  //       res.status(200)
-  //       res.json({
-  //         message: 'action updated successfully!',
-  //       })
-  //     }).catch((err) => {
-  //       console.log(err);
-  //       res.status(400);
-  //       res.json({
-  //         message: "Error!",
-  //         error: err
-  //       })
-  //     })
-  //   });
+  //
+  //   res.redirect('/');
+  // });
+
+  //UPDATE USER 2
+  app.put('/users/:userId', function(req, res) {
+    console.log('PUT user:', req.params.userId);
+    const username = req.user.username;
+
+    const userId = req.params.id
+    const user = req.body
+    db.User.update(user, {
+      where: { id: userId }
+    }).then((response) => {
+        res.status(200)
+        res.json({
+          message: 'user updated successfully!',
+        })
+      }).catch((err) => {
+        console.log(err);
+        res.status(400);
+        res.json({
+          message: "Error!",
+          error: err
+        })
+      })
+    });
 
 
   //DELETE USER
