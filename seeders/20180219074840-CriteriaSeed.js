@@ -248,7 +248,6 @@ module.exports = {
 
               { text: "Attempted to solve a complex case before decomposing it into simpler elements.",  level: 1, scaleId: 10098, createdAt: new Date(), updatedAt: new Date(), id: 10102 },
               { text: "Decomposed the question into simpler parts and then synthesized a more complex solution",  level: 2, scaleId: 10099, createdAt: new Date(), updatedAt: new Date(), id: 10103 },
-              { text: "Decomposed the question into simpler parts and then synthesized a complex solution.",  level: 3, scaleId: 10100, createdAt: new Date(), updatedAt: new Date(), id: 10104 },
 
           ], {});
 
