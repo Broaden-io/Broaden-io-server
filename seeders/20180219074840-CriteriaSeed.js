@@ -243,11 +243,11 @@ module.exports = {
               { text: "Moves quickly to an elegant and efficient solution.",  level: 4, scaleId: 10093, createdAt: new Date(), updatedAt: new Date(), id: 10197 },
 
               { text: "Did not use pseudocode.",  level: 1, scaleId: 10094, createdAt: new Date(), updatedAt: new Date(), id: 10198 },
-              { text: "Used pseudocode",  level: 2, scaleId: 10095, createdAt: new Date(), updatedAt: new Date(), id: 10199 },
-              { text: "Used pseudocode to chat through various implementations of a solution with the interviewer, identify edge cases, while integrating the interviewer’s suggestions and hints.",  level: 3, scaleId: 10096, createdAt: new Date(), updatedAt: new Date(), id: 10100 },
+              { text: "Used pseudocode",  level: 2, scaleId: 10094, createdAt: new Date(), updatedAt: new Date(), id: 10199 },
+              { text: "Used pseudocode to chat through various implementations of a solution with the interviewer, identify edge cases, while integrating the interviewer’s suggestions and hints.",  level: 3, scaleId: 10094, createdAt: new Date(), updatedAt: new Date(), id: 10100 },
 
-              { text: "Attempted to solve a complex case before decomposing it into simpler elements.",  level: 1, scaleId: 10098, createdAt: new Date(), updatedAt: new Date(), id: 10102 },
-              { text: "Decomposed the question into simpler parts and then synthesized a more complex solution",  level: 2, scaleId: 10099, createdAt: new Date(), updatedAt: new Date(), id: 10103 },
+              { text: "Attempted to solve a complex case before decomposing it into simpler elements.",  level: 1, scaleId: 10095, createdAt: new Date(), updatedAt: new Date(), id: 10102 },
+              { text: "Decomposed the question into simpler parts and then synthesized a more complex solution",  level: 2, scaleId: 10095, createdAt: new Date(), updatedAt: new Date(), id: 10103 },
 
           ], {});
 
