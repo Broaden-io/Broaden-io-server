@@ -28,6 +28,8 @@ app.use('/s3', require('react-dropzone-s3-uploader/s3router')({
   ACL: 'private',                                 // this is the default - set to `public-read` to let anyone view uploads
 }));
 
+
+
 //**** AUTH MIDDLEWARE ****//
 var checkAuth = function (req, res, next) {
   const auth = req.header('Authorization')

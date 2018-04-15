@@ -119,7 +119,7 @@ const AWS = requrie('aws-sdk')
     res.redirect('/');
   });
 
-  // Get User Name
+  // Get User information
   app.get('/user/:username', function(req, res) {
     // console.log('PUT user:', req.params.userId);
     const username = req.params.username
