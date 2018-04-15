@@ -1,15 +1,3 @@
-
-const express = require('express');
-const aws = require('aws-sdk');
-
-const app = express();
-app.set('views', './views');
-app.use(express.static('./public'));
-app.engine('html', require('ejs').renderFile);
-app.listen(process.env.PORT || 8000);
-
-const S3_BUCKET = process.env.S3_BUCKET;
-
 //**** DEPENDENCIES ****//
 require('dotenv').config();
 const express = require('express');

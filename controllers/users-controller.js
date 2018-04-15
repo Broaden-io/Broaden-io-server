@@ -42,51 +42,56 @@ module.exports = function(app) {
 
   //SHOW PROFILE
   app.get('/profile', function(req, res) {
-    const username = req.user.username;
-    username = "jeffchiu"
-    db.User.findOne({ where: { username } }).then((userData) => {
-      const user = userData.dataValues;
-      if (!user) {
-        // User not found
-        return res.status(400).send({ message: 'Cannot get user' });
-      }
-      res.status(200);
-      res.json({
-        username: user.username,
-        email: user.email,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        bio: user.bio,
-        avatarURL: user.avatarURL
-      });
-    })
-    .catch((err) => {
-      if (err) {
-        res.status(400);
+    if (req.user) {
+      const username = req.user.username;
+      db.User.findOne({ where: { username } }).then((userData) => {
+        const user = userData.dataValues;
+        if (!user) {
+          // User not found
+          return res.status(400).send({ message: 'Cannot get user' });
+        }
+        res.status(200);
         res.json({
-          message: "Cannot get user"
+          username: user.username,
+          email: user.email,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          bio: user.bio,
+          avatarURL: user.avatarURL
         });
-      }
-    })
+      })
+      .catch((err) => {
+        if (err) {
+          res.status(400);
+          res.json({
+            message: "Cannot get user"
+          });
+        }
+      })
+    } else {
+      res.status(401);
+      res.json({
+        message: "Not logged in"
+      })
+    }
   })
 
   // UPDATE USER
-  // app.put('/users/:userId', function(req, res) {
-  //   console.log('PUT user:', req.params.userId);
-  //
-  //
-  //   res.redirect('/');
-  // });
-
-  //UPDATE USER 2
   app.put('/users/:userId', function(req, res) {
     console.log('PUT user:', req.params.userId);
-    const username = req.user.username;
+
+    res.redirect('/');
+  });
+
+  // Get User Name
+  app.get('/user/:username', function(req, res) {
+    // console.log('PUT user:', req.params.userId);
+    const username = req.params.username
 
     const userId = req.params.id
     const user = req.body
     db.User.update(user, {
-      where: { id: userId }
+      where: { username: username }
     }).then((response) => {
         res.status(200)
         res.json({
