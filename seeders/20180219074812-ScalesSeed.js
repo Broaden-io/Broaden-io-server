@@ -105,6 +105,16 @@ module.exports = {
               { name: "Alternative Architectures",  competencyId: 10019, createdAt: new Date(), updatedAt: new Date(), id: 10086 },
               { name: "Coding Rules of Thumb",  competencyId: 10019, createdAt: new Date(), updatedAt: new Date(), id: 10087 },
 
+              { name: "Punctuality",  competencyId: 10028, createdAt: new Date(), updatedAt: new Date(), id: 10088 },
+              { name: "Body Language During Interview",  competencyId: 10028, createdAt: new Date(), updatedAt: new Date(), id: 10089 },
+              { name: "Personal Odyssey",  competencyId: 10028, createdAt: new Date(), updatedAt: new Date(), id: 10090 },
+              { name: "Questions At End of Interview",  competencyId: 10028, createdAt: new Date(), updatedAt: new Date(), id: 10091 },
+
+              { name: "Restating Question",  competencyId: 10026, createdAt: new Date(), updatedAt: new Date(), id: 10092 },
+              { name: "Using Hints",  competencyId: 10026, createdAt: new Date(), updatedAt: new Date(), id: 10093 },
+              { name: "Pseudocode",  competencyId: 10026, createdAt: new Date(), updatedAt: new Date(), id: 10094 },
+              { name: "Decomposing problem",  competencyId: 10026, createdAt: new Date(), updatedAt: new Date(), id: 10095 },
+
           ], {});
 
     /*

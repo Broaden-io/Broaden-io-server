@@ -28,12 +28,12 @@ module.exports = {
               { name: "Architecture & Paradigms",  rubricId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 10019 },
               { name: "Timely and Clear Communication",  rubricId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 10020 },
               { name: "Professionalism and Maturity",  rubricId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 10021 },
-              { name: "Mentorship, Casual Interviews, Coffees, and Contacts",  rubricId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 10022 },
-              { name: "Teamwork & Leadership",  rubricId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 10023 },
-              { name: "Technical Discussion Interview",  rubricId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 10024 },
-              { name: "Algorithms and Data Structures",  rubricId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 10025 },
+              // { name: "Mentorship, Casual Interviews, Coffees, and Contacts",  rubricId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 10022 },
+              // { name: "Teamwork & Leadership",  rubricId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 10023 },
+              // { name: "Technical Discussion Interview",  rubricId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 10024 },
+              // { name: "Algorithms and Data Structures",  rubricId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 10025 },
               { name: "Technical Interviewing & Live Coding",  rubricId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 10026 },
-              { name: "Resume, Cover Letter, LinkedIn, & GitHub",  rubricId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 10027 },
+              // { name: "Resume, Cover Letter, LinkedIn, & GitHub",  rubricId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 10027 },
               { name: "Behavioral Inteviewing",  rubricId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 10028 },
           ], {});
     /*

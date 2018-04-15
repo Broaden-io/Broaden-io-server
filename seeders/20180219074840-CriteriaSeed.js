@@ -212,6 +212,28 @@ module.exports = {
               { text: "Is familiar with some of the basic coding vocabulary and rules of thumb.",  level: 2, scaleId: 10087, createdAt: new Date(), updatedAt: new Date(), id: 10172 },
               { text: "Has optimized code for speed and scale through optimizing queries",  level: 4, scaleId: 10087, createdAt: new Date(), updatedAt: new Date(), id: 10173 },
 
+              { text: "Arrives late to interview",  level: 1, scaleId: 10088, createdAt: new Date(), updatedAt: new Date(), id: 10174 },
+              { text: "Arrives on time to interviews",  level: 2, scaleId: 10088, createdAt: new Date(), updatedAt: new Date(), id: 10175 },
+              { text: "Arrives on time and is engaged",  level: 3, scaleId: 10088, createdAt: new Date(), updatedAt: new Date(), id: 10176 },
+              { text: "Arrives 15 minutes early, dresses to fit the company culture and proactively engages with desk staff",  level: 4, scaleId: 10088, createdAt: new Date(), updatedAt: new Date(), id: 10177 },
+
+              { text: "Rushes to answer questions, is fidgety and distracted, looks away from recruiters",  level: 1, scaleId: 10089, createdAt: new Date(), updatedAt: new Date(), id: 10178 },
+              { text: "Speaks softly, sometimes without clear direction in thought",  level: 2, scaleId: 10089, createdAt: new Date(), updatedAt: new Date(), id: 10179 },
+              { text: "Speaks confidently with minor fidgets and 'ums'",  level: 3, scaleId: 100879, createdAt: new Date(), updatedAt: new Date(), id: 10180 },
+              { text: "Speaks confidently with upright posture, without any 'ums' or 'uhs'",  level: 4, scaleId: 10089, createdAt: new Date(), updatedAt: new Date(), id: 10181 },
+
+              { text: "Has difficulty explaining who they are and their career goals",  level: 1, scaleId: 10090, createdAt: new Date(), updatedAt: new Date(), id: 10182 },
+              { text: "Fluidly explains themselves and work journey to this specific company",  level: 2, scaleId: 10090, createdAt: new Date(), updatedAt: new Date(), id: 10183 },
+              { text: "Fluidly explains themselves and journey to this specific company",  level: 3, scaleId: 10090, createdAt: new Date(), updatedAt: new Date(), id: 10184 },
+              { text: "Summarizes their career journey in an incredibly memorable way",  level: 4, scaleId: 10090, createdAt: new Date(), updatedAt: new Date(), id: 10185 },
+
+              { text: "Doesn’t ask questions at the end of the interview",  level: 1, scaleId: 10091, createdAt: new Date(), updatedAt: new Date(), id: 10186 },
+              { text: "Asks some questions at the end of the interview",  level: 2, scaleId: 10092, createdAt: new Date(), updatedAt: new Date(), id: 10187 },
+              { text: "Asks many thoughtful questions at the end of the interview",  level: 3, scaleId: 10092, createdAt: new Date(), updatedAt: new Date(), id: 10188 },
+              { text: "Always asks multiple questions specific to the company and interests ",  level: 4, scaleId: 10092, createdAt: new Date(), updatedAt: new Date(), id: 10189 },
+
+
+
           ], {});
 
     /*
