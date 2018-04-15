@@ -232,7 +232,23 @@ module.exports = {
               { text: "Asks many thoughtful questions at the end of the interview",  level: 3, scaleId: 10092, createdAt: new Date(), updatedAt: new Date(), id: 10188 },
               { text: "Always asks multiple questions specific to the company and interests ",  level: 4, scaleId: 10092, createdAt: new Date(), updatedAt: new Date(), id: 10189 },
 
+              { text: "Was largely silent during interview with few or no clarifying questions.",  level: 1, scaleId: 10092, createdAt: new Date(), updatedAt: new Date(), id: 10190 },
+              { text: "Restated the question of the interviewer and verbalized steps they were taking.",  level: 2, scaleId: 10092, createdAt: new Date(), updatedAt: new Date(), id: 10191 },
+              { text: "Restated the question and asked a few clarifying questions of the interviewer.",  level: 3, scaleId: 10092, createdAt: new Date(), updatedAt: new Date(), id: 10192 },
+              { text: "Can discuss the scalability of their solution or alternative solutions",  level: 4, scaleId: 10092, createdAt: new Date(), updatedAt: new Date(), id: 10193 },
 
+              { text: "Made only one attempt at solving the problem and did not integrate the interviewer’s hints or suggestions.",  level: 1, scaleId: 10093, createdAt: new Date(), updatedAt: new Date(), id: 10194 },
+              { text: "Made a few attempts to solve the problem and attempted to integrate the interviewer’s hints and suggestions.",  level: 2, scaleId: 10093, createdAt: new Date(), updatedAt: new Date(), id: 10195 },
+              { text: "Identified edge and core cases before starting to code",  level: 3, scaleId: 10093, createdAt: new Date(), updatedAt: new Date(), id: 10196 },
+              { text: "Moves quickly to an elegant and efficient solution.",  level: 4, scaleId: 10093, createdAt: new Date(), updatedAt: new Date(), id: 10197 },
+
+              { text: "Did not use pseudocode.",  level: 1, scaleId: 10094, createdAt: new Date(), updatedAt: new Date(), id: 10198 },
+              { text: "Used pseudocode",  level: 2, scaleId: 10095, createdAt: new Date(), updatedAt: new Date(), id: 10199 },
+              { text: "Used pseudocode to chat through various implementations of a solution with the interviewer, identify edge cases, while integrating the interviewer’s suggestions and hints.",  level: 3, scaleId: 10096, createdAt: new Date(), updatedAt: new Date(), id: 10100 },
+
+              { text: "Attempted to solve a complex case before decomposing it into simpler elements.",  level: 1, scaleId: 10098, createdAt: new Date(), updatedAt: new Date(), id: 10102 },
+              { text: "Decomposed the question into simpler parts and then synthesized a more complex solution",  level: 2, scaleId: 10099, createdAt: new Date(), updatedAt: new Date(), id: 10103 },
+              { text: "Decomposed the question into simpler parts and then synthesized a complex solution.",  level: 3, scaleId: 10100, createdAt: new Date(), updatedAt: new Date(), id: 10104 },
 
           ], {});
 
