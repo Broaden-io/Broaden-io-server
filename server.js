@@ -42,6 +42,7 @@ require('./controllers/competencies-controller.js')(app);
 require('./controllers/scales-controller.js')(app);
 require('./controllers/criteria-controller.js')(app);
 require('./controllers/assessments-controller.js')(app);
+require('./controllers/actions-controller.js')(app);
 
 app.get('/', function(req, res) {
   res.send('Rubrics App backend up and running!');

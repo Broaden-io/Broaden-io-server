@@ -1,10 +1,10 @@
 'use strict';
+var ogs = require('open-graph-scraper')
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return queryInterface.bulkInsert('Actions', [
-
+    const learningActions = [
       { creator: 10003, name: "HTML Boilerplate", url: "https://github.com/h5bp/html5-boilerplate/blob/master/src/index.html" , criterionId: 10000, createdAt: new Date(), updatedAt: new Date(), id: 10000 },
       { creator: 10003, name: "", url: "https://www.w3schools.com/html/html_basic.asp" , criterionId: 10001, createdAt: new Date(), updatedAt: new Date(), id: 10001 },
       { creator: 10003, name: "", url: "https://www.w3schools.com/html/html_basic.asp" , criterionId: 10001, createdAt: new Date(), updatedAt: new Date(), id: 10002 },
@@ -42,10 +42,35 @@ module.exports = {
       { creator: 10003, name: "", url: "https://www.youtube.com/watch?v=wz3kElLbEHE" , criterionId: 10023, createdAt: new Date(), updatedAt: new Date(), id: 10034 },
       { creator: 10003, name: "", url: "https://www.w3schools.com/jquery/default.asp", criterionId: 10024, createdAt: new Date(), updatedAt: new Date(), id: 10035 },
       { creator: 10003, name: "", url: "https://www.w3schools.com/html/html_scripts.asp" , criterionId: 10024, createdAt: new Date(), updatedAt: new Date(), id: 10036 },
-      { creator: 10003, name: "", url: "https://www.codecademy.com/catalog/language/javascript" , criterionId: 10024, createdAt: new Date(), updatedAt: new Date(), id: 10037 },
-      { creator: 10003, name: "", url: "https://www.codecademy.com/catalog/language/javascript" , criterionId: 10024, createdAt: new Date(), updatedAt: new Date(), id: 10038 },
+    ];
 
-    ], {});
+    var allLearningActions = [];
+
+    let allProcess = Promise.all(learningActions.map((action) => {
+      return new Promise((resolve) => {
+        var options = {'url': action.url};
+        ogs(options, (error, results) => {
+          if (error) {
+            console.log('Open Graph Error:', results.error) // This is returns true or false. True if there was a error. The error it self is inside the results object.
+          } else {
+            console.log('Open Graph Call Successful...')
+          }
+          const newAction = { ...action, meta: results.success ? JSON.stringify(results.data) : JSON.stringify({ error: results }) }
+          allLearningActions.push(newAction);
+          return resolve(action);
+        });
+      });
+    })).then(() => {
+      const config =  {
+        logging: console.log,
+        seederStorage: "sequelize"
+      };
+      return queryInterface.bulkInsert('Actions', allLearningActions, config);
+    });
+
+    return allProcess;
+
+
     /*
     Add altering commands here.
     Return a promise to correctly handle asynchronicity.
@@ -54,20 +79,20 @@ module.exports = {
     return queryInterface.bulkInsert('Person', [{
     name: 'John Doe',
     isBetaMember: false
-    }], {});
-    */
-  },
+  }], {});
+  */
+},
 
-  down: (queryInterface, Sequelize) => {
+down: (queryInterface, Sequelize) => {
 
-    return queryInterface.bulkDelete('Actions', null, {});
+  return queryInterface.bulkDelete('Actions', null, {});
 
-    /*
-    Add reverting commands here.
-    Return a promise to correctly handle asynchronicity.
+  /*
+  Add reverting commands here.
+  Return a promise to correctly handle asynchronicity.
 
-    Example:
-    return queryInterface.bulkDelete('Person', null, {});
-    */
-  }
+  Example:
+  return queryInterface.bulkDelete('Person', null, {});
+  */
+}
 };

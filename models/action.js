@@ -19,5 +19,12 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
+
+  Action.associate = function(models) {
+    // Competency has many Scales
+    models.Action.hasOne(models.User, {
+      foreignKey: 'id'
+    });
+  };
   return Action;
 };

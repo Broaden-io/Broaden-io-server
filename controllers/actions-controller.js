@@ -1,4 +1,5 @@
 const db = require('../models');
+var ogs = require('open-graph-scraper')
 
 module.exports = (app) => {
 
@@ -88,4 +89,25 @@ module.exports = (app) => {
       })
     })
   });
+
+  // Open Graph Pipe
+  app.post('/opengraph', (req, res) => {
+    const action = req.body
+    console.log("ACTION", action)
+    var options = {'url': action.url}
+    ogs(options, (error, results) => {
+      if (error) {
+        console.log('Open Graph Error:', results.error) // This is returns true or false. True if there was a error. The error it self is inside the results object.
+      } else {
+        console.log('Open Graph Call Successful...')
+      }
+      const newAction = {
+        ...action,
+        meta: results.success ? results.data : { error: results }        
+      }
+      console.log('NEWACTION', newAction)
+      res.status(200)
+      res.json(newAction)
+    })
+  })
 }

@@ -126,36 +126,43 @@ module.exports = (app) => {
             })
           })
         })
-        return db.Action.findAll({ where: { id: criterionIds }})
-      }
-    }).then((learningActions) => {
-      return Promise.all(learningActions.map((action) => {
-        return new Promise((resolve) => {
-          var options = {'url': action.url}
-          ogs(options, (error, results) => {
-            if (error) {
-              console.log('Open Graph Error:', results.error) // This is returns true or false. True if there was a error. The error it self is inside the results object.
-            } else {
-              console.log('Open Graph Call Successful...')
-            }
-            const newAction = { ...action.dataValues, meta: results.success ? results.data : { error: results } }
-            console.log('ACTION', newAction)
-            allLearningActions.push(newAction)
-            return resolve(action)
-          })
+        return db.Action.findAll({
+          where: {
+            id: criterionIds
+          },
+          include: [{
+            model: db.User,
+          }],
         })
-      }))
+      }
     })
+    // .then((learningActions) => {
+    //   return Promise.all(learningActions.map((action) => {
+    //     return new Promise((resolve) => {
+    //       var options = {'url': action.url}
+    //       ogs(options, (error, results) => {
+    //         if (error) {
+    //           console.log('Open Graph Error:', results.error) // This is returns true or false. True if there was a error. The error it self is inside the results object.
+    //         } else {
+    //           console.log('Open Graph Call Successful...')
+    //         }
+    //         const newAction = { ...action.dataValues, meta: results.success ? results.data : { error: results } }
+    //         allLearningActions.push(newAction)
+    //         return resolve(action)
+    //       })
+    //     })
+    //   }))
+    // })
     .then((learningActions) => {
-      console.log('Learning Actions:', allLearningActions.map(action => action.url))
+      console.log('Learning Actions:', allLearningActions.length)
       allAssessments.forEach((assessment) => {
         assessment.rubricJSON.Competencies.forEach((competency) => {
           competency.Scales.forEach((scale) => {
             scale.Criteria.forEach((criterion) => {
-              criterion.Actions = allLearningActions.filter((action) => {
-                return action.criterionId === criterion.id
+              criterion.Actions = learningActions.filter((action) => {
+                return action.dataValues.criterionId === criterion.id
               }).map((action) => {
-                return action
+                return action.dataValues
               })
             })
           })
