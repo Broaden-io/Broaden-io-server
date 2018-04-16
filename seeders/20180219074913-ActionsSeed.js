@@ -63,12 +63,5 @@ module.exports = {
 
     return queryInterface.bulkDelete('Actions', null, {});
 
-    /*
-    Add reverting commands here.
-    Return a promise to correctly handle asynchronicity.
-
-    Example:
-    return queryInterface.bulkDelete('Person', null, {});
-    */
   }
 };

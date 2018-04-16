@@ -4,7 +4,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
 
     return queryInterface.bulkInsert('Competencies', [
-              // Full-Stack Web
+              //Web - Full Stack
               { name: "HTML and Templating",  rubricId: 10000, createdAt: new Date(), updatedAt: new Date(), id: 10000 },
               { name: "CSS",  rubricId: 10000, createdAt: new Date(), updatedAt: new Date(), id: 10001 },
               { name: "Client-Side Javascript",  rubricId: 10000, createdAt: new Date(), updatedAt: new Date(), id: 10002 },
@@ -20,7 +20,7 @@ module.exports = {
               { name: "Emotional Intelligence",  rubricId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 20017 },
               { name: "Communication",  rubricId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 20018 },
 
-              // Full-Stack Mobile
+              //Mobile - Full Stack
               { name: "Swift",  rubricId: 10001, createdAt: new Date(), updatedAt: new Date(), id: 10007 },
               { name: "XCode",  rubricId: 10001, createdAt: new Date(), updatedAt: new Date(), id: 10008 },
               { name: "iOS Frontend",  rubricId: 10001, createdAt: new Date(), updatedAt: new Date(), id: 10009 },
