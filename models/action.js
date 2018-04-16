@@ -1,7 +1,9 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var Action = sequelize.define('Action', {
-    name: DataTypes.STRING,
+    customTitle: DataTypes.STRING,
+    customType: DataTypes.STRING,
+    customNote: DataTypes.STRING,
     url: DataTypes.STRING,
     meta: DataTypes.JSON,
     creator: {
