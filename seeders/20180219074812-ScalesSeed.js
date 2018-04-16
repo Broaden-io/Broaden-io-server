@@ -74,6 +74,9 @@ module.exports = {
               { name: "Many-to-Many",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10061 },
               { name: "Backups and DB Transfer",  competencyId: 10006, createdAt: new Date(), updatedAt: new Date(), id: 10062 },
 
+
+
+              // Internship and Job Readiness Rubric
               { name: "Collection and Presentation",  competencyId: 10015, createdAt: new Date(), updatedAt: new Date(), id: 10063 },
               { name: "Level of Polish",  competencyId: 10015, createdAt: new Date(), updatedAt: new Date(), id: 10064 },
               { name: "UX of Portfolio Projects",  competencyId: 10015, createdAt: new Date(), updatedAt: new Date(), id: 10065 },
@@ -86,7 +89,6 @@ module.exports = {
               { name: "Stepwise/Agile Development",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10071 },
               { name: "Scoping",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10072 },
               { name: "Testing Functionality Stepwise",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10073 },
-
 
               { name: "GitHub Commits per Week",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10074 },
               { name: "Number of Projects",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10075 },

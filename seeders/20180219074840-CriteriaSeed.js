@@ -111,6 +111,8 @@ module.exports = {
               { text: "Can make and query advanced associations (many-to-many)",  level: 2, scaleId: 10061, createdAt: new Date(), updatedAt: new Date(), id: 10098 },
               { text: "Can pipe data between databases as well as create and restore backups",  level: 3, scaleId: 10062, createdAt: new Date(), updatedAt: new Date(), id: 10099 },
 
+
+              // Internship and Job Readiness
               { text: "The portfolio is sparse and not collected in one place <3 live, polished projects.",  level: 1, scaleId: 10063, createdAt: new Date(), updatedAt: new Date(), id: 10100 },
               { text: "The portfolio is collected in one place, either on LinkedIn or in a portfolio site or a personal website.",  level: 2, scaleId: 10063, createdAt: new Date(), updatedAt: new Date(), id: 10101 },
               { text: "The portfolio is presented in a unique and inviting personal website that displays a rich portfolio of  original projects.",  level: 3, scaleId: 10063, createdAt: new Date(), updatedAt: new Date(), id: 10102 },
@@ -133,8 +135,6 @@ module.exports = {
 
               { text: "One or more projects has live users/revenue/GitHub followers and is in active development.",  level: 3, scaleId: 10068, createdAt: new Date(), updatedAt: new Date(), id: 10115 },
               { text: "A projects is of exception quality, e.g., 1k+ downloads, trending on Hacker News, GitHub, Product Hunt",  level: 4, scaleId: 10068, createdAt: new Date(), updatedAt: new Date(), id: 10116 },
-
-
 
               { text: "Often just jumps into coding without making any plans, backlog, milestones, or sprint planning.",  level: 1, scaleId: 10069, createdAt: new Date(), updatedAt: new Date(), id: 10117 },
               { text: "Makes a plan but doesn’t stick to it or practice good prioritization.",  level: 2, scaleId: 10069, createdAt: new Date(), updatedAt: new Date(), id: 10118 },
