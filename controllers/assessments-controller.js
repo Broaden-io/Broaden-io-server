@@ -128,11 +128,12 @@ module.exports = (app) => {
         })
         return db.Action.findAll({
           where: {
-            id: criterionIds
+            criterionId: criterionIds
           },
           include: [{
             model: db.User,
-          }],
+            as: 'User'
+          }]
         })
       }
     })

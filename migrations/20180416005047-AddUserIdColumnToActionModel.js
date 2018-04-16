@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return queryInterface.addColumn('Actions', 'creator', {
+    return queryInterface.addColumn('Actions', 'userId', {
       type: Sequelize.INTEGER,
       onDelete: 'CASCADE',
       references: {
@@ -23,7 +23,7 @@ module.exports = {
 
   down: (queryInterface, Sequelize) => {
 
-    return queryInterface.removeColumn('Actions', 'creator');
+    return queryInterface.removeColumn('Actions', 'userId');
 
     /*
     Add reverting commands here.
