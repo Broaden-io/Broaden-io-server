@@ -12,7 +12,7 @@ module.exports = {
       { name: "HTML Tags Memorization", url: "https://www.youtube.com/watch?v=QZXDAGwD8Ng" , criterionId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 10004 },
       { name: "", url: "https://www.impressivewebs.com/w3schools-ugly-bad-good/" , criterionId: 10002, createdAt: new Date(), updatedAt: new Date(), id: 10005 },
       { name: "Semantical HTML", url: "https://en.wikipedia.org/wiki/Semantic_HTML" , criterionId: 10003, createdAt: new Date(), updatedAt: new Date(), id: 10006 },
-      { name: "", url: "https://internetingishard.com/html-and-css/semantic-html/" , criterionId: 10003, createdAt: new Date(), updatedAt: new Date(), id: 1000 },
+      { name: "", url: "https://internetingishard.com/html-and-css/semantic-html/" , criterionId: 10003, createdAt: new Date(), updatedAt: new Date(), id: 10007 },
       { name: "", url: "https://www.lifewire.com/why-use-semantic-html-3468271" , criterionId: 10003, createdAt: new Date(), updatedAt: new Date(), id: 10008 },
       { name: "", url: "https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/html-indent.md" , criterionId: 10004, createdAt: new Date(), updatedAt: new Date(), id: 10009 },
       { name: "Node.js + Express - Tutorial - Handlebars Templating Engine", url: "https://www.youtube.com/watch?v=1srD3Mdvf50" , criterionId: 10005, createdAt: new Date(), updatedAt: new Date(), id: 10010 },
@@ -45,7 +45,6 @@ module.exports = {
       { name: "JavaScript", url: "https://www.codecademy.com/catalog/language/javascript" , criterionId: 10024, createdAt: new Date(), updatedAt: new Date(), id: 10037 },
       { name: "JavaScript", url: "https://www.codecademy.com/catalog/language/javascript" , criterionId: 10024, createdAt: new Date(), updatedAt: new Date(), id: 10038 },
 
-      // { name: "Writing client side", url: , criterionId: 1000, createdAt: new Date(), updatedAt: new Date(), id: 1000 },
     ], {});
     /*
     Add altering commands here.
