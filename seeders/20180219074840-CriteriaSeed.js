@@ -219,7 +219,7 @@ module.exports = {
 
               { text: "Rushes to answer questions, is fidgety and distracted, looks away from recruiters",  level: 1, scaleId: 10089, createdAt: new Date(), updatedAt: new Date(), id: 10178 },
               { text: "Speaks softly, sometimes without clear direction in thought",  level: 2, scaleId: 10089, createdAt: new Date(), updatedAt: new Date(), id: 10179 },
-              { text: "Speaks confidently with minor fidgets and 'ums'",  level: 3, scaleId: 10879, createdAt: new Date(), updatedAt: new Date(), id: 10180 },
+              { text: "Speaks confidently with minor fidgets and 'ums'",  level: 3, scaleId: 1089, createdAt: new Date(), updatedAt: new Date(), id: 10180 },
               { text: "Speaks confidently with upright posture, without any 'ums' or 'uhs'",  level: 4, scaleId: 10089, createdAt: new Date(), updatedAt: new Date(), id: 10181 },
 
               { text: "Has difficulty explaining who they are and their career goals",  level: 1, scaleId: 10090, createdAt: new Date(), updatedAt: new Date(), id: 10182 },
@@ -228,9 +228,9 @@ module.exports = {
               { text: "Summarizes their career journey in an incredibly memorable way",  level: 4, scaleId: 10090, createdAt: new Date(), updatedAt: new Date(), id: 10185 },
 
               { text: "Doesn’t ask questions at the end of the interview",  level: 1, scaleId: 10091, createdAt: new Date(), updatedAt: new Date(), id: 10186 },
-              { text: "Asks some questions at the end of the interview",  level: 2, scaleId: 10092, createdAt: new Date(), updatedAt: new Date(), id: 10187 },
-              { text: "Asks many thoughtful questions at the end of the interview",  level: 3, scaleId: 10092, createdAt: new Date(), updatedAt: new Date(), id: 10188 },
-              { text: "Always asks multiple questions specific to the company and interests ",  level: 4, scaleId: 10092, createdAt: new Date(), updatedAt: new Date(), id: 10189 },
+              { text: "Asks some questions at the end of the interview",  level: 2, scaleId: 10091, createdAt: new Date(), updatedAt: new Date(), id: 10187 },
+              { text: "Asks many thoughtful questions at the end of the interview",  level: 3, scaleId: 10091, createdAt: new Date(), updatedAt: new Date(), id: 10188 },
+              { text: "Always asks multiple questions specific to the company and interests ",  level: 4, scaleId: 10091, createdAt: new Date(), updatedAt: new Date(), id: 10189 },
 
               { text: "Was largely silent during interview with few or no clarifying questions.",  level: 1, scaleId: 10092, createdAt: new Date(), updatedAt: new Date(), id: 10190 },
               { text: "Restated the question of the interviewer and verbalized steps they were taking.",  level: 2, scaleId: 10092, createdAt: new Date(), updatedAt: new Date(), id: 10191 },
