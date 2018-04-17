@@ -1,8 +1,29 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var Action = sequelize.define('Action', {
-    name: DataTypes.STRING,
-    url: DataTypes.STRING
+    customTitle: {
+      allowNull: true,
+      type: DataTypes.STRING
+    },
+    customType: {
+      allowNull: true,
+      type: DataTypes.STRING
+    },
+    customNote: {
+      allowNull: true,
+      type: DataTypes.STRING
+    },
+    url: DataTypes.STRING,
+    meta: DataTypes.JSON,
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'Users',
+        key: 'id'
+      }
+    }
   }, {
     classMethods: {
       associate: function(models) {
@@ -10,5 +31,12 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
+
+  Action.associate = function(models) {
+    // Competency has many Scales
+    models.Action.belongsTo(models.User, {
+      foreignKey: 'userId'
+    });
+  };
   return Action;
 };

@@ -29,3 +29,13 @@ sequelize seed:generate --name ActionsSeed
 sequelize migration:create --name AddCriteriaBoolInitializerColumn
 
 sequelize migration:create --name add-icon-name-to-rubric-model
+
+sequelize migration:create --name AddMetaColumnToActionModel
+
+sequelize migration:create --name AddUserIdColumnToActionModel
+
+sequelize migration:create --name RenameNameColumnInActionModelToCustomTitle
+
+sequelize migration:create --name AddTypeColumnToActionModel
+
+sequelize migration:create --name AddNoteColumnToActionModel
