@@ -37,7 +37,7 @@ module.exports = (app) => {
           message: 'action updated successfully!',
         })
       }).catch((err) => {
-        console.log(err);
+        console.log('Error in action update:', err)
         res.status(400);
         res.json({
           message: "Error!",
@@ -48,18 +48,19 @@ module.exports = (app) => {
 
   // Create a action
   app.post('/criteria/:criterionId/actions/create', (req, res) => {
-    const newAction = {...req.body, criterionId: req.params.criterionId}
+    const newAction = req.body
+
     db.Action.create(newAction)
     .then((action) => {
       console.log("Response from action/Create: ", action)
       res.status(200)
       res.json({
         message: 'action added successfully!',
-        action
+        action: action.dataValues
       })
     })
     .catch((err) => {
-      console.log(err);
+      console.log("There was an error!", err);
       res.status(400);
       res.json({
         message: "Error!",
@@ -93,7 +94,6 @@ module.exports = (app) => {
   // Open Graph Pipe
   app.post('/opengraph', (req, res) => {
     const action = req.body
-    console.log("ACTION", action)
     var options = {'url': action.url}
     ogs(options, (error, results) => {
       if (error) {
@@ -103,9 +103,8 @@ module.exports = (app) => {
       }
       const newAction = {
         ...action,
-        meta: results.success ? results.data : { error: results }        
+        meta: results.success ? results.data : { error: results }
       }
-      console.log('NEWACTION', newAction)
       res.status(200)
       res.json(newAction)
     })
