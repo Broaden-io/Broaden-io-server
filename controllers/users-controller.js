@@ -42,16 +42,16 @@ module.exports = function(app) {
         });
       }
     })
-
   });
 
 
     // UPDATE USER
     app.put('/users/:username', function(req, res) {
       console.log('PUT user:', req.params.userId);
+      const user = req.body
       const username = req.params.username
 
-      db.User.update(username, {
+      db.User.update(user, {
         where: { username: username }
       }).then((response) => {
           res.status(200)
