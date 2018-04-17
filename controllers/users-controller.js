@@ -49,6 +49,7 @@ module.exports = function(app) {
     // UPDATE USER
     app.put('/users/:username', function(req, res) {
       console.log('PUT user:', req.params.userId);
+      const username = req.params.username
 
       db.User.update(username, {
         where: { username: username }
@@ -69,13 +70,13 @@ module.exports = function(app) {
 
 
     // Get User information
-    app.get('/user/:username', function(req, res) {
+    app.get('/users/:username', function(req, res) {
       // console.log('PUT user:', req.params.userId);
       const username = req.params.username
 
       const userId = req.params.id
       const user = req.body
-      db.User.update(user, {
+      db.User.findOne(username, {
         where: { username: username }
       }).then((response) => {
           res.status(200)
