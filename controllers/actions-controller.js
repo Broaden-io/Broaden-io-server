@@ -1,4 +1,5 @@
 const db = require('../models');
+var ogs = require('open-graph-scraper')
 
 module.exports = (app) => {
 
@@ -36,7 +37,7 @@ module.exports = (app) => {
           message: 'action updated successfully!',
         })
       }).catch((err) => {
-        console.log(err);
+        console.log('Error in action update:', err)
         res.status(400);
         res.json({
           message: "Error!",
@@ -47,18 +48,19 @@ module.exports = (app) => {
 
   // Create a action
   app.post('/criteria/:criterionId/actions/create', (req, res) => {
-    const newAction = {...req.body, criterionId: req.params.criterionId}
+    const newAction = req.body
+
     db.Action.create(newAction)
     .then((action) => {
       console.log("Response from action/Create: ", action)
       res.status(200)
       res.json({
         message: 'action added successfully!',
-        action
+        action: action.dataValues
       })
     })
     .catch((err) => {
-      console.log(err);
+      console.log("There was an error!", err);
       res.status(400);
       res.json({
         message: "Error!",
@@ -88,4 +90,23 @@ module.exports = (app) => {
       })
     })
   });
+
+  // Open Graph Pipe
+  app.post('/opengraph', (req, res) => {
+    const action = req.body
+    var options = {'url': action.url}
+    ogs(options, (error, results) => {
+      if (error) {
+        console.log('Open Graph Error:', results.error) // This is returns true or false. True if there was a error. The error it self is inside the results object.
+      } else {
+        console.log('Open Graph Call Successful...')
+      }
+      const newAction = {
+        ...action,
+        meta: results.success ? results.data : { error: results }
+      }
+      res.status(200)
+      res.json(newAction)
+    })
+  })
 }
