@@ -39,5 +39,3 @@ This will create a production build and will start a server at http://localhost:
 This project is licensed under the MIT License - see the [LICENSE.](https://tldrlegal.com/license/mit-license) file for details
 
 -------------------
-
-![screen shot 2018-03-01 at 2 20 24 pm](https://user-images.githubusercontent.com/10523517/36866100-3700dba4-1d46-11e8-8192-bd77ec02bdf0.png)
