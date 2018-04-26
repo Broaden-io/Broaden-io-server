@@ -4,6 +4,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
 
     return queryInterface.bulkInsert('Criteria', [
+              // Full Stack Web Rubric
               { text: "Can write the basic HTML boilerplate from memory",  level: 1, scaleId: 10000, createdAt: new Date(), updatedAt: new Date(), id: 10000 },
               { text: "Needs to look up tags occasionally from documentation",  level: 1, scaleId: 10001, createdAt: new Date(), updatedAt: new Date(), id: 10001 },
               { text: "Can write basic and advanced HTML tags from memory",  level: 2, scaleId: 10001, createdAt: new Date(), updatedAt: new Date(), id: 10002 },

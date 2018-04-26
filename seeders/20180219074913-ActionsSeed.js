@@ -5,6 +5,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
 
     const learningActions = [
+      // Full Stack Web Rubric
       { userId: 10003, customTitle: "HTML Boilerplate", url: "https://github.com/h5bp/html5-boilerplate/blob/master/src/index.html" , criterionId: 10000, createdAt: new Date(), updatedAt: new Date(), id: 10000 },
       { userId: 10003, customTitle: "", url: "https://www.w3schools.com/html/html_basic.asp" , criterionId: 10001, createdAt: new Date(), updatedAt: new Date(), id: 10001 },
       { userId: 10003, customTitle: "", url: "https://www.w3schools.com/html/html_elements.asp" , criterionId: 10001, createdAt: new Date(), updatedAt: new Date(), id: 10002 },

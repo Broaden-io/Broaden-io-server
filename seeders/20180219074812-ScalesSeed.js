@@ -4,6 +4,8 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
 
     return queryInterface.bulkInsert('Scales', [
+
+              // Full Stack Web Rubric
               { name: "Basic HTML Boilerplate",  competencyId: 10000, createdAt: new Date(), updatedAt: new Date(), id: 10000 },
               { name: "HTML From Memory",  competencyId: 10000, createdAt: new Date(), updatedAt: new Date(), id: 10001 },
               { name: "Indentation",  competencyId: 10000, createdAt: new Date(), updatedAt: new Date(), id: 10002 },
@@ -77,6 +79,7 @@ module.exports = {
 
 
               // Internship and Job Readiness Rubric
+              // Portfolio Competency
               { name: "Collection and Presentation",  competencyId: 10015, createdAt: new Date(), updatedAt: new Date(), id: 10063 },
               { name: "Level of Polish",  competencyId: 10015, createdAt: new Date(), updatedAt: new Date(), id: 10064 },
               { name: "UX of Portfolio Projects",  competencyId: 10015, createdAt: new Date(), updatedAt: new Date(), id: 10065 },
@@ -84,34 +87,48 @@ module.exports = {
               { name: "Code Accessibility",  competencyId: 10015, createdAt: new Date(), updatedAt: new Date(), id: 10067 },
               { name: "Live users",  competencyId: 10015, createdAt: new Date(), updatedAt: new Date(), id: 10068 },
 
+              // Project Planning Competency
               { name: "Prioritization and follow-through",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10069 },
               { name: "Project Planning Tools",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10070 },
               { name: "Stepwise/Agile Development",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10071 },
               { name: "Scoping",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10072 },
               { name: "Testing Functionality Stepwise",  competencyId: 10016, createdAt: new Date(), updatedAt: new Date(), id: 10073 },
 
+              // Code Work Ethic Competency
               { name: "GitHub Commits per Week",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10074 },
               { name: "Number of Projects",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10075 },
               { name: "Finishing Projects",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10076 },
               { name: "Feedback",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10077 },
               { name: "Resources for Problem Solving",  competencyId: 10017, createdAt: new Date(), updatedAt: new Date(), id: 10078 },
 
+              // Code Craft & Quality Competency
               { name: "Code Naming",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10079 },
               { name: "Indentation and Spacing",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10080 },
               { name: "Commenting Readability",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10081 },
               { name: "Test Coverage",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10082 },
               { name: "Using TDD",  competencyId: 10018, createdAt: new Date(), updatedAt: new Date(), id: 10083 },
 
+              // Architecture & Paradigms Competency
               { name: "OOP Familiarity",  competencyId: 10019, createdAt: new Date(), updatedAt: new Date(), id: 10084 },
               { name: "MVC Familiarity",  competencyId: 10019, createdAt: new Date(), updatedAt: new Date(), id: 10085 },
               { name: "Alternative Architectures",  competencyId: 10019, createdAt: new Date(), updatedAt: new Date(), id: 10086 },
               { name: "Coding Rules of Thumb",  competencyId: 10019, createdAt: new Date(), updatedAt: new Date(), id: 10087 },
 
+              // Timely and Clear Communication
+              // Professionalism and Maturity
+              // Mentorship, Casual Interviews, Coffees, and Contacts
+              // Teamwork & Leadership
+              // Technical Discussion Interview
+              // Algorithms and Data Structures
+              // Resume, Cover Letter, LinkedIn, & GitHub
+
+              // Behavioral Interviewing Competency
               { name: "Punctuality",  competencyId: 10028, createdAt: new Date(), updatedAt: new Date(), id: 10088 },
               { name: "Body Language During Interview",  competencyId: 10028, createdAt: new Date(), updatedAt: new Date(), id: 10089 },
               { name: "Personal Odyssey",  competencyId: 10028, createdAt: new Date(), updatedAt: new Date(), id: 10090 },
               { name: "Questions At End of Interview",  competencyId: 10028, createdAt: new Date(), updatedAt: new Date(), id: 10091 },
 
+              // Technical Interviewing & Live Coding Competency
               { name: "Restating Question",  competencyId: 10026, createdAt: new Date(), updatedAt: new Date(), id: 10092 },
               { name: "Using Hints",  competencyId: 10026, createdAt: new Date(), updatedAt: new Date(), id: 10093 },
               { name: "Pseudocode",  competencyId: 10026, createdAt: new Date(), updatedAt: new Date(), id: 10094 },
