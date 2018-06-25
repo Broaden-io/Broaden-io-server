@@ -45,53 +45,53 @@ module.exports = function(app) {
   });
 
 
-    // UPDATE USER
-    app.put('/users/:username', function(req, res) {
-      console.log('PUT user:', req.params.userId);
-      const user = req.body
-      const username = req.params.username
+  // UPDATE USER
+  app.put('/users/:username', function(req, res) {
+    console.log('PUT user:', req.params.userId);
+    const user = req.body
+    const username = req.params.username
 
-      db.User.update(user, {
-        where: { username: username }
-      }).then((response) => {
-          res.status(200)
-          res.json({
-            message: 'username updated successfully!',
-          })
-        }).catch((err) => {
-          console.log(err);
-          res.status(400);
-          res.json({
-            message: "Error!",
-            error: err
-          })
-        })
-      });
+    db.User.update(user, {
+      where: { username: username }
+    }).then((response) => {
+      res.status(200)
+      res.json({
+        message: 'username updated successfully!',
+      })
+    }).catch((err) => {
+      console.log(err);
+      res.status(400);
+      res.json({
+        message: "Error!",
+        error: err
+      })
+    })
+  });
 
 
-    // Get User information
-    app.get('/users/:username', function(req, res) {
-      // console.log('PUT user:', req.params.userId);
-      const username = req.params.username
+  // GET USER PROFILE BY USERNAME
+  app.get('/users/:username', function(req, res) {
+    // console.log('PUT user:', req.params.userId);
+    const username = req.params.username
 
-      const userId = req.params.id
-      const user = req.body
-      db.User.findOne(username, {
-        where: { username: username }
-      }).then((response) => {
-          res.status(200)
-          res.json({
-            message: 'Get user successfully!',
-          })
-        }).catch((err) => {
-          console.log(err);
-          res.status(400);
-          res.json({
-            message: "Error!",
-            error: err
-          })
-        })
-      });
+    const userId = req.params.id
+    const user = req.body
+    db.User.findOne(username, {
+      where: { username: username }
+    }).then((response) => {
+      res.status(200)
+      res.json({
+        message: 'Get user successfully!',
+      })
+    }).catch((err) => {
+      console.log(err);
+      res.status(400);
+      res.json({
+        message: "Error!",
+        error: err
+      })
+    })
+  });
 
 
   //DELETE USER
