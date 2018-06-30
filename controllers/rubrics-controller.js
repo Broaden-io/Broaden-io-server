@@ -19,6 +19,28 @@ module.exports = (app) => {
     })
   });
 
+  // Index of all Rubrics for a given User
+  app.get('/users/:userId/rubrics', (req, res) => {
+    const userId = req.params.userId
+    db.Rubric.findAll({
+      where: {
+        userId
+      }
+    })
+    .then((rubrics) => {
+      console.log("Response from Rubric/Index: ", rubrics)
+      res.json(rubrics)
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400);
+      res.json( {
+        message: "Error!",
+        error: err
+      })
+    })
+  });
+
   // Show a Rubric
   app.get('/rubrics/:id', (req, res) => {
     const rubricId = req.params.id
