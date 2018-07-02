@@ -9,7 +9,27 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
       type: DataTypes.STRING
     },
-    description: DataTypes.TEXT
+    description: DataTypes.TEXT,
+    levelOne: {
+      allowNull: true,
+      type: DataTypes.STRING,
+      defaultValue: 'Unsatisfactory'
+    },
+    levelTwo: {
+      allowNull: true,
+      type: DataTypes.STRING,
+      defaultValue: 'Competent'
+    },
+    levelThree: {
+      allowNull: true,
+      type: DataTypes.STRING,
+      defaultValue: 'Proficient'
+    },
+    levelFour: {
+      allowNull: true,
+      type: DataTypes.STRING,
+      defaultValue: 'Professional'
+    },
   });
 
   Rubric.associate = function(models) {

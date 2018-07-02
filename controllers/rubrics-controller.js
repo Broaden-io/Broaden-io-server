@@ -2,6 +2,28 @@ const db = require('../models');
 
 module.exports = (app) => {
 
+  // Create a Rubric
+  app.post('/users/:userId/rubrics/create', (req, res) => {
+    const newRubric = {...req.body, userId: req.params.userId}
+    db.Rubric.create(newRubric)
+    .then((rubric) => {
+      console.log("Response from Rubric/Create: ", rubric)
+      res.status(200)
+      res.json({
+        message: 'Rubric added successfully!',
+        rubric
+      })
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400);
+      res.json({
+        message: "Error!",
+        error: err
+      })
+    })
+  });
+
   // Index of all Rubrics
   app.get('/rubrics', (req, res) => {
     db.Rubric.findAll()
@@ -74,28 +96,6 @@ app.put('/rubrics/:id/update', (req, res) => {
       message: 'Rubric updated successfully!',
     })
   }).catch((err) => {
-    console.log(err);
-    res.status(400);
-    res.json({
-      message: "Error!",
-      error: err
-    })
-  })
-});
-
-// Create a Rubric
-app.post('/users/:userId/rubrics/create', (req, res) => {
-  const newRubric = {...req.body, userId: req.params.userId}
-  db.Rubric.create(newRubric)
-  .then((rubric) => {
-    console.log("Response from Rubric/Create: ", rubric)
-    res.status(200)
-    res.json({
-      message: 'Rubric added successfully!',
-      rubric
-    })
-  })
-  .catch((err) => {
     console.log(err);
     res.status(400);
     res.json({
