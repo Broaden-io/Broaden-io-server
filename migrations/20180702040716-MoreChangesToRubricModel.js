@@ -36,7 +36,7 @@ module.exports = {
       }),
       queryInterface.changeColumn('Rubrics', 'iconName', {
         type: Sequelize.STRING,
-        defaultValue: null;
+        defaultValue: null,
       }),
       queryInterface.removeColumn('Rubrics', 'iconColor'),
     ]);
