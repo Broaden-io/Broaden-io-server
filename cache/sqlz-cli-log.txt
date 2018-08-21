@@ -39,3 +39,7 @@ sequelize migration:create --name RenameNameColumnInActionModelToCustomTitle
 sequelize migration:create --name AddTypeColumnToActionModel
 
 sequelize migration:create --name AddNoteColumnToActionModel
+
+sequelize migration:create --name AddLevelNamesToRubricModel
+
+sequelize migration:create --name MoreChangesToRubricModel
